@@ -18,7 +18,7 @@
 
     </head>
     <body>
-       <div class="home" style="height:100vh">
+       <div class="home" style="height: 100vh">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
                     <a href="#"><img src="images/logo3.jpg" class="navimg"></a>
@@ -32,7 +32,7 @@
                                     <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                     <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
+                                    <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">                        
                                     <div class="dropdown">
@@ -59,22 +59,34 @@
                 </nav>
            </div>
            <div class="overlay">
-                <div class="container middle text-white choose">
-                    <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
-                    </a>
-                    <a href="<?php echo 'viewPackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">VIEW</h3></button>
-                    </a>
-                    <a href="<?php echo 'addPackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">ADD</h3></button>
-                    </a>
-                    <a href="<?php echo 'updatePackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPDATE</h3></button>
-                    </a>
-                    <a href="<?php echo 'deletePackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">DELETE</h3></button>
-                    </a>
+                <div class="container text-white">
+                    <form class="addform">
+                        <div class="form-group ">
+                          <label for="trainerfirstname">First Name</label>
+                          <input type="name" class="form-control" id="trainerfirstname">
+                        </div>
+                         <div class="form-group">
+                          <label for="trainerlastname">Last Name</label>
+                          <input type="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail2">Email Address</label>
+                          <input type="email" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword2">Password</label>
+                          <input type="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainerid">Trainer ID</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainerphone">Phone Number </label>
+                            <input type="number" class="form-control">
+                         </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
                 </div>
                         
             </div>

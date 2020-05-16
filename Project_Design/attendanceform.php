@@ -1,3 +1,6 @@
+<?php
+    include('personClass.php');
+?>
 <html>
     <head>
         <title>FitnessHouse.com</title>

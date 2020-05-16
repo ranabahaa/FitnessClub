@@ -1,3 +1,7 @@
+<?php
+    include('personClass.php');
+?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -51,7 +55,7 @@
                                         
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">LOGOUT <i class="fas fa-long-arrow-alt-right text-white"></i></a>
+                                    <a class="nav-link text-white" href="#" name="logoutbtn">LOGOUT <i class="fas fa-long-arrow-alt-right text-white"></i></a>
 
                                 </li>
                             </ul>

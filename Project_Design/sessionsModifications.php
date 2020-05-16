@@ -18,55 +18,66 @@
 
     </head>
     <body>
-       <div class="home" style="height: 100vh">
+       <div class="home" style="height:100vh">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
                     <a href="#"><img src="images/logo3.jpg" class="navimg"></a>
-                    <a href="#" class="coder">Fitness House</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse " id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                 <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
-                            </li>
-                            <li class="nav-item">                        
-                                <div class="dropdown">
-                                    <a onclick="myFunction()" class="dropbtn nav-link text-white" >MORE<img src="images/arrow.jpg" class="arrow"> </a>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <a href="<?php echo 'index1.php #sessions'; ?>">Sessions</a>
-                                        <a href="<?php echo 'index1.php #packages'; ?>">Packages</a>
-                                        <a href="<?php echo 'index1.php #branches'; ?>">Our Branches</a>
-                                        <a href="<?php echo 'index1.php #contactus'; ?>">Contact Us</a>
+                        <a href="#" class="coder">Fitness House</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse " id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                     <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">                        
+                                    <div class="dropdown">
+                                        <a onclick="myFunction()" class="dropbtn nav-link text-white" >MORE<img src="images/arrow.jpg" class="arrow"> </a>
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <a href="<?php echo 'index1.php #sessions'; ?>">Sessions</a>
+                                            <a href="<?php echo 'index1.php #packages'; ?>">Packages</a>
+                                            <a href="<?php echo 'index1.php #branches'; ?>">Our Branches</a>
+                                            <a href="<?php echo 'index1.php #contactus'; ?>">Contact Us</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>                 
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="<?php echo 'indexAdmin.php'; ?>"><i class="fas fa-user-circle text-white width:10%"></i> MANAGE USERS</a>
+                                </li>
+                                  
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="<?php echo 'indexAdmin.php'; ?>"><i class="fas fa-user-circle text-white width:10%"></i> MANAGE USERS</a>
                                         
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">LOGOUT <i class="fas fa-long-arrow-alt-right text-white"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#">LOGOUT <i class="fas fa-long-arrow-alt-right text-white"></i></a>
 
-                            </li>
-                        </ul>
-                    </div>
+                                </li>
+                            </ul>
+                        </div>
                 </nav>
            </div>
            <div class="overlay">
-                <div class="container text-white ">
-                    <form class="addform">
-                        <div class="form-group ">
-                        <div class="form-group">
-                            <label for="memberid">ID</label>
-                            <input type="number" class="form-control" id="sessionid" placeholder="Enter session id">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
+                <div class="container middle text-white choose">
+                    <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
+                    </a>
+                    <a href="<?php echo 'uploadimage.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPLOAD</h3></button>
+                    </a>
+                    <a href="<?php echo 'viewsession.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">View</h3></button>
+                    </a>
+                    <a href="<?php echo 'addsession.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">ADD</h3></button>
+                    </a>
+                    <a href="<?php echo 'updatesession.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPDATE</h3></button>
+                    </a>
+                    <a href="<?php echo 'deletesession.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">DELETE</h3></button>
+                    </a>
                 </div>
                         
             </div>

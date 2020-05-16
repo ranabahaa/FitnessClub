@@ -1,3 +1,6 @@
+<?php
+    include('personClass.php');
+?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -51,30 +54,30 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                         <div class="form-group ">
                         <div class="form-group ">
-                            <label for="memberfirstname">First Name</label>
+                            <label for="memberfirstname" name="fname">First Name</label>
                             <input type="name" class="form-control" id="memberfirstname">
                         </div>
                         <div class="form-group">
-                            <label for="memberlastname">Last Name</label>
+                            <label for="memberlastname" name="lname">Last Name</label>
                             <input type="name" class="form-control" id="memberlastname">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email Address</label>
+                            <label for="exampleInputEmail1" name="email">Email Address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex: ...@anything.com" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label for="exampleInputPassword1" name="password">Password</label>
                             <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="form-group">
-                            <label for="memberphone">Phone Number </label>
+                            <label for="memberphone" name="number">Phone Number </label>
                             <input type="number" class="form-control" id="memberphone" placeholder="ex: 011335.." aria-describedby="emailHelp">
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">SignUp</button>
+                        <button type="submit" class="btn btn-primary" name="signupbtn">SignUp</button>
                       </form>
                 </div>
                         

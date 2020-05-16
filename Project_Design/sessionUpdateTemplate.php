@@ -15,7 +15,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-
     </head>
     <body>
        <div class="home" style="height:100vh">
@@ -30,9 +29,9 @@
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
                                     <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
-                                </li>
+                               </li>
                                 <li class="nav-item">
-                                     <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
+                                    <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">                        
                                     <div class="dropdown">
@@ -42,7 +41,7 @@
                                             <a href="<?php echo 'index1.php #packages'; ?>">Packages</a>
                                             <a href="<?php echo 'index1.php #branches'; ?>">Our Branches</a>
                                             <a href="<?php echo 'index1.php #contactus'; ?>">Contact Us</a>
-                                        </div>
+                                       </div>
                                     </div>
                                 </li>
                                   
@@ -59,22 +58,46 @@
                 </nav>
            </div>
            <div class="overlay">
-                <div class="container middle text-white choose">
-                    <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
-                    </a>
-                    <a href="<?php echo 'viewPackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">VIEW</h3></button>
-                    </a>
-                    <a href="<?php echo 'addPackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">ADD</h3></button>
-                    </a>
-                    <a href="<?php echo 'updatePackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPDATE</h3></button>
-                    </a>
-                    <a href="<?php echo 'deletePackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">DELETE</h3></button>
-                    </a>
+                <div class="container text-white">
+                    <form class="addform">
+                        <div class="form-group ">
+                          <label for="sessionid">session id</label>
+                          <input type="nuber" class="form-control">
+                        </div>
+                         <div class="form-group">
+                          <label for="sessionname">session name</label>
+                          <input type="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="sessioncost">session cost</label>
+                          <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="sessiondiscount">session discount</label>
+                          <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="stime">start time</label>
+                            <input class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="etime">end time </label>
+                            <input class="form-control">
+                         </div>
+                         <div class="form-group">
+                            <label for="memberphone">session days</label>
+                            <input class="form-control">
+                         </div>
+                         <div class="form-group">
+                            <label for="sessiongoal">session goal</label>
+                            <input class="form-control">
+                         </div>
+                         <div class="form-group">
+                            <label for="trainername">trainer name</label>
+                            <input type="name" class="form-control">
+                         </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
                 </div>
                         
             </div>

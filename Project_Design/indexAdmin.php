@@ -1,3 +1,7 @@
+<?php
+    include('personClass.php');
+?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -71,6 +75,7 @@
                     <a href="<?php echo 'sessionsModifications.php'; ?>" class=" pick_btn middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h1 class="m-5">Sessions »</h1></button>
                     </a>
+                    <button class="text-white bg-dark p-4">Report</button>
                 </div>
                         
             </div>

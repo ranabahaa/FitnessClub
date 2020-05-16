@@ -1,3 +1,7 @@
+<?php
+    include('personClass.php');
+?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -56,22 +60,22 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="memberid">ID</label>
-                            <input type="number" class="form-control" id="memberid" placeholder="Enter Your id">
+                            <input type="number" class="form-control" id="memberid" name="id" placeholder="Enter Your id">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email Address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Your mail" aria-describedby="emailHelp">
+                            <input type="email" name="mail" class="form-control" id="exampleInputEmail1" placeholder="Enter Your mail" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" name="pass" class="form-control" id="exampleInputPassword1">
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" name="loginbtn" class="btn btn-primary">Login</button>
                       </form>
                 </div>
                         
