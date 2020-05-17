@@ -6,6 +6,12 @@
 class DataBase{
 
 
+  public function __construct()
+  {
+   
+  }
+
+
 //Select All Data
 static function selectAll($tablename)
 {
@@ -19,7 +25,7 @@ static function selectAll($tablename)
 	    $result = mysqli_query($conn,$query);
 	   if($bool = mysqli_affected_rows($conn) >= 1)
 	{
-		echo "<br>"."Affected rows: " . mysqli_affected_rows($conn)."<br>";
+	//	echo "<br>"."Affected rows: " . mysqli_affected_rows($conn)."<br>";
 		  	$arrayOfResult = mysqli_fetch_all( $result ,MYSQLI_ASSOC);
     } 
      if( $bool >= 1)
@@ -63,10 +69,10 @@ static function selectAll($tablename)
              $sql = "DELETE FROM $tablename WHERE $id=$value";
                     
              if (mysqli_query($conn, $sql)) {
-                echo "Record deleted successfully";
+          return 1;
              } else {
-                echo "Error deleting record: " . mysqli_error($conn);
-             }
+              return 0 ; 
+            }
                 
 
             }
@@ -79,15 +85,14 @@ static function insert($tablename,$value){
 
   $conn = $connectdb->getConnection();
 
-
   $sql= "INSERT INTO $tablename VALUES ($value)";
+  echo "sql command : $sql <br>";
    $q=mysqli_query($conn,$sql);
   if($q){
-    echo "Done";
+    return 1;
   }
   else{
-    echo mysqli_error($conn);
-
+  return 0;
   }
 }
 
@@ -95,7 +100,7 @@ static function insert($tablename,$value){
 
 
 //Update
-static public function update($tablename,$records,$id,$value)
+static public function update($tablename,$records,$idName,$idValue)
 {
 
   $connectdb  = connectdb::getInstance();
@@ -105,15 +110,15 @@ static public function update($tablename,$records,$id,$value)
 	foreach ($records as $key => $value) {
 		echo "$key = $value <br>";
 		
-			$query = "UPDATE $tablename SET $key = '$value' where $id =  $value";
+			$query = "UPDATE $tablename SET $key = $value where $idName =  $idValue";
+      echo "query to database $query <br>";
 			$result = mysqli_query($conn,$query);
+      echo "<br> $query";
 			//echo "<br> mysqli_affected_rows($conn)<br>";
 		if($bool = mysqli_affected_rows($conn) >= 1)
 			{$count = $count +1;
 
-
 			}
-
 
 	}
 
@@ -135,14 +140,14 @@ $object= new DataBase();
 
 
 //Trials
-
+/*
 
 if(isset($_POST['update'])){
 
 echo "working <br>";
  
 	$arrayName  = array('Member_Fname'=>'hamada', 'Member_Lname'=>'bahaa', 'Member_email'=>'ehbd@sds','Member_password'=>'sdsd','MobileNumber'=> 1000);
-	$object-> update('member',$arrayName,'Member_id',1);
+	$object-> update(' member',$arrayName,' Member_id',1);
 	$object-> selectRecord('member','Member_id',12);
 
 }
@@ -209,4 +214,4 @@ echo "working <br>";
  <body>
  
  </body>
- </html>
+ </html>*/

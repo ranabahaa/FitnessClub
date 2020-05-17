@@ -1,5 +1,17 @@
 <?php
-    include('personClass.php');
+    //include('PersonClass.php');
+    include('../ApplicationLayer/AdminClass.php');
+
+    if(isset($_POST['report']))
+    {
+        $admin = new Admin(1);
+
+        //   $get_parameters="action=view & file = indexAdmin.pdf";
+    //   echo "<a href='indexAdmin.php?$get_parameters' target='_blank'></a>";
+        $admin->generatePdf();
+        //echo "Report button done <br>";
+    }
+    
 ?>
 
 <html>
@@ -75,7 +87,14 @@
                     <a href="<?php echo 'sessionsModifications.php'; ?>" class=" pick_btn middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h1 class="m-5">Sessions »</h1></button>
                     </a>
-                    <button class="text-white bg-dark p-4">Report</button>
+
+                    <form action = 
+                        
+                   " <?php echo $_SERVER['PHP_SELF'] ?> " method = "POST">
+                           <input type="submit" name="report" value="report"  
+                           class="text-white bg-dark p-4">
+ 
+                     </form>
                 </div>
                         
             </div>

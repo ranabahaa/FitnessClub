@@ -1,11 +1,13 @@
 <?php  
+
+
 class connectdb {
 	private $_connection;
 	private static $_instance; //The single instance
 	private $_host = 'localhost';
-	private $_username = 'rana';
-	private $_password = 'rana';
-	private $_database = 'fitness_club';
+	private $_username = 'ahmedBahaa';
+	private $_password = 'test1234';
+	private $_database = 'test1';
 
 
 	public static function getInstance() {
@@ -14,7 +16,7 @@ class connectdb {
 		if(!self::$_instance) { 
 			self::$_instance = new self();
 			
-				echo " Instance$id";
+			//	echo " Instance$id";
 				$id=1+$id;
 
 		}
@@ -33,7 +35,7 @@ class connectdb {
 	private function __clone() { }
 
 	 public function getConnection() {
-		echo" get connction";
+		//echo" get connction";
 		return $this->_connection;
 	}
 }
@@ -41,6 +43,7 @@ class connectdb {
 
 
    	$conn = connectdb::getInstance();
-	$conn->getConnection();  
 
-?>
+		$conn->getConnection();  
+
+		?>
