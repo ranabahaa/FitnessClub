@@ -32,7 +32,7 @@
                                     <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                     <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
+                                    <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">                        
                                     <div class="dropdown">
@@ -59,22 +59,23 @@
                 </nav>
            </div>
            <div class="overlay">
-                <div class="container middle text-white choose">
-                    <a href="<?php echo 'searchtrainer.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">SEARCH</h3></button>
-                    </a>
-                    <a href="<?php echo 'viewtrainer.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">VIEW</h3></button>
-                    </a>
-                    <a href="<?php echo 'addtrainer.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">ADD</h3></button>
-                    </a>
-                    <a href="<?php echo 'updatetrainer.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPDATE</h3></button>
-                    </a>
-                    <a href="<?php echo 'deletetrainer.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">DELETE</h3></button>
-                    </a>
+                <div class="container text-white">
+                    <form class="addform">
+                        <div class="form-group">
+                          <label for="memberid">Member id</label>
+                          <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainerid">Trainer id</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group ">
+                          <label for="sessionid">session id</label>
+                          <input type="number" class="form-control">
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
                 </div>
                         
             </div>

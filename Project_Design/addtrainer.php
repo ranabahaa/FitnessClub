@@ -61,29 +61,38 @@
            <div class="overlay">
                 <div class="container text-white">
                     <form class="addform">
+                        <div class="form-group">
+                            <label for="trainerid">Trainer ID</label>
+                            <input type="number" class="form-control">
+                        </div>
                         <div class="form-group ">
                           <label for="trainerfirstname">First Name</label>
-                          <input type="name" class="form-control" id="trainerfirstname">
+                          <input type="name" class="form-control">
                         </div>
                          <div class="form-group">
                           <label for="trainerlastname">Last Name</label>
-                          <input type="name" class="form-control" id="trainerlastname">
+                          <input type="name" class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail2">Email Address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                          <input type="email" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword2">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword2">
+                          <input type="password" class="form-control">
                         </div>
+                    
                         <div class="form-group">
-                            <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" id="trainerid">
-                        </div>
-                        <div class="form-group">
-                            <label for="trainerphone">Phone Number </label>
-                            <input type="number" class="form-control" id="trainerphone" >
+                            <label for="trainersalary">salary </label>
+                            <input type="number" class="form-control" >
+                         </div>
+                         <div class="form-group">
+                            <label for="hireddate">Hired date </label>
+                            <input class="form-control" >
+                         </div>
+                         <div class="form-group">
+                            <label for="trainersalary">shifts </label>
+                            <input class="form-control" >
                          </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                       </form>

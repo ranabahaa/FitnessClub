@@ -1,5 +1,5 @@
 <?php
-    include('personClass.php');
+    include('PersonClass.php');
 ?>
 
 <html>
@@ -53,6 +53,19 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href="<?php echo 'indexMember.php'; ?>"><i class="fas fa-user-circle text-white width:10%"></i> MY PROFILE</a>
                                         
+                                </li>
+                                
+                                <li class="nav-item bg-dark" style="width: 40%">                        
+                                    <div class="dropdown3">                                       
+                                        <a onclick="myFunction3()" class="dropbtnNotify nav-link text-white">Notifications</a>
+                                        <div id="myDropdown3" class="dropdown-content3">
+<!--heeeeere is the beginning of the text paart-->                                             
+                                            <a href="#">first notifiction</a>
+                                            <a href="#">second notification</a>
+                                            <a href="#">third notification</a>
+                                            <a href="#">fourth notification</a>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href="#" name="logoutbtn">LOGOUT <i class="fas fa-long-arrow-alt-right text-white"></i></a>
@@ -118,6 +131,9 @@
             function myFunction2() {
                  document.getElementById("myDropdown2").classList.toggle("show2");
             }
+            function myFunction3() {
+                 document.getElementById("myDropdown3").classList.toggle("show3");
+            }
                         
              // Close the dropdown if the user clicks outside of it
             window.onclick = function(event) {
@@ -140,6 +156,18 @@
                           var openDropdown = dropdowns[i];
                          if (openDropdown.classList.contains('show2')) {
                              openDropdown.classList.remove('show2');
+                            }
+                         }
+                     }
+                 }
+                 window.onclick = function(event) {
+                 if (!event.target.matches('.dropbtnNotify')) {
+                      var dropdowns = document.getElementsByClassName("dropdown-content3");
+                      var i;
+                     for (i = 0; i < dropdowns.length; i++) {
+                          var openDropdown = dropdowns[i];
+                         if (openDropdown.classList.contains('show3')) {
+                             openDropdown.classList.remove('show3');
                             }
                          }
                      }

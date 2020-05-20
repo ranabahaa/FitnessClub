@@ -6,61 +6,6 @@
 }
 
 
-/* neon style
-
-.wrapper {
-    height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000000; 
-}
-.txt {
-    color: #ffffff;
-    background:#000000;
-    font-size:200px;
-    font-weight: bold;
-    font-family: Arial;
-    text-transform: uppercase;
-}
-.txt::before {
-    content: 'hey';
-    position: absolute;
-    mix-blend-mode: difference;
-    filter: blur(3px);
-}
-.neon-wrapper {
-    display:inline-flex;
-    filter: brightness(200%);
-    overflow: hidden;
-}
-.gradient{
-    background: linear-gradient(114.5793141156962deg, rgba(6, 227, 250,1) 4.927083333333334%,rgba(229, 151, 64,1) 97.84374999999999%);
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height:100%;
-    mix-blend-mode: multiply;
-}
-.dodge {
-    background: radial-gradient(circle,white,black 35%) center / 25% 25%;
-    position: absolute;
-    top:-100%;
-    left:-100%;
-    right:0;
-    bottom:0;    mix-blend-mode: color-dodge;
-    animation: dodge-area 3s linear infinite;
-}
-@keyframes dodge-area {
-    to {
-        transform: translate(50%,50%);
-    }
-}
-end of neon */
-
-
-
 
 .home{
     height: 650px;
@@ -295,35 +240,6 @@ end of neon */
     border-radius: 50%;
 }
 
-/*end of coaches part*/
-/*
-.both{
-    width: 100%;
-    margin-top: 40px;
-    padding-bottom: 40px;
-}
-.div1{
-    float: left;
-}
-.div1 h1{
-    font-weight: bold;
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-.div1 p{
-    color: #777777;
-}
-
-
-.myservices{
-    border: 0px;
-     transition-duration: 1s;
-
-}
-.myservices:hover{
-    background-color: rgb(210, 60, 70);
-}
-*/
 /*end of third part*/
 .backg{
     background-color: rgb(245, 240, 239);
@@ -477,88 +393,6 @@ end of neon */
     padding: 10px 20px;
     transition-duration: 1s;
 }
-/*popup modal*/
-.modal{
-    border: solid 3px black;
-    border-radius:10px;
-
-}
-.modal_one , .modal_two , .modal_three ,.modal_four,.modal_five,.modal_six{
-    border: solid 2px rgb(165, 20, 20);
-    border-radius:15%;
-}
-.modal_one{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 600px;
-    background-color: rgb(216, 235, 213,0.7);
- 
-}
-.datesdiv{
-    float: left;
-    margin-right: 20px;
-}
-.trainersbuttondiv .btn{
-    padding: 10px 5px 10px 5px;
-    border:solid 3px  rgb(184, 29, 34) ;
-    border-radius: 30px;
-    background-color: rgb(20, 41, 73);
-    color: antiquewhite;
-    margin-bottom: 15px;
-
-}
-.trainersbuttondiv .btn:hover{
-    background-color: whitesmoke;
-    color: black;
-}
-.selectbtn{
-    padding: 15px 10px 15px 10px;
-    border:solid 2px  rgb(45, 46, 45) ;
-    border-radius: 30px;
-    background-color: rgb(30, 172, 65);
-    color: antiquewhite;
-    width: 40%;
-    margin-top: 50px;
-    font-size: 20px;
-
-}
-.modal_two{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 600px;
-    background-color: rgb(216, 235, 213,0.7);
-}
-.modal_three{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 600px;
-    background-color: rgb(216, 235, 213,0.7);
-}
-.modal_four{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 600px;
-    background-color: rgb(216, 235, 213,0.7);
-}
-.modal_five{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 600px;
-    background-color: rgb(216, 235, 213,0.7);
-}
-.modal_six{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 600px;
-    background-color: rgb(216, 235, 213,0.7);
-}
-/*end of popup modal*/
 
  /*the end of the fourth part*/
 .six{
@@ -784,6 +618,48 @@ font-size: 17px;
 .show2 {
       display: block;
 }
+.dropbtnNotify{
+    padding: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: auto;
+    
+  }
+.dropbtnNotify:hover{
+    background-color: rgb(15, 15, 53);
+    
+  }
+  
+.dropdown3 {
+    position: relative;
+    display: inline-block;
+    border: 0px;
+   
+  }
+  
+.dropdown-content3 {
+    display: none;
+    position: absolute;
+    background-color: rgba(247, 249, 251, 0.6);
+    border: solid 0px none;
+    border-radius: 10%;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content3 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+.show3 {
+    display: block;
+}
+  
 
 /*the end of member main page */
 /*the start of member modification page*/

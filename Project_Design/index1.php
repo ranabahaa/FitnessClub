@@ -115,20 +115,7 @@
             </div>
         
         </section>
-        <!--
-        <section>
-            <div class="container">
-                
-                    <div class=" m-auto">
-                        <button class="bg-danger p-2 px-4 mb-5 text-center text-white myservices">MY SERVICES</button>
-                    </div>
-                    
-                </div>
-            
-            </div>
-        
-        </section>
-        -->
+    
         <section class="work2">
                 <div class="container ">
                     <div class="row">
@@ -254,14 +241,14 @@
                             </a>
                         </div>
                         <div class="check">
-                            <button class="bg-danger text-white font-weight-bold check2">Get In Touch</button>
+                        <a href="<?php echo 'Booking.php'; ?>"><button class="bg-danger text-white font-weight-bold check2">BOOK!</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    <!-- Modals -->
+    <!-- Modals 
         <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -407,7 +394,7 @@
                         </div>
                     </div>
             </div>
-        <!--end of modals of packages-->    
+        end of modals of packages-->    
 
         <section class="six" id="packages">
             <div class="container">

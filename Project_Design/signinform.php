@@ -1,5 +1,5 @@
 <?php
-    include('personClass.php');
+    include('PersonClass.php');
 ?>
 
 <html>
