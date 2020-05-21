@@ -1,3 +1,26 @@
+<?php
+include("../ApplicationLayer/AdminClass.php");
+if(isset($_POST['submit']))
+{
+
+session_start();
+
+$packageId = $_SESSION['packageId'];
+//NOTE THAT YOU NEED ADMIN ID FROM LOGIN SESSION VARIABLE AND PLACE IT INSTEAD OF LAST INDEX IN THE ARRAY
+$array =  array($_POST['packageDuration'], $_POST['beginingDate'],$_POST['endDate'] ,$_POST['packageFees'],1);
+$admin = new Admin(1);
+
+$admin->updatePackage($array,$packageId);
+
+}
+
+
+
+
+
+
+?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -59,29 +82,27 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
-                        <div class="form-group ">
-                          <label for="packageid">Package id</label>
-                          <input type="number" class="form-control">
-                        </div>
+
+                    <form class="addform" method = "POST" >
+                        
                          <div class="form-group">
                           <label for="memberlastname">Package Duration</label>
-                          <input class="form-control">
+                          <input class="form-control" name ="packageDuration">
                         </div>
                         <div class="form-group">
                           <label for="bdate">Beginning date</label>
-                          <input class="form-control">
+                          <input class="form-control" name="beginingDate">
                         </div>
                         <div class="form-group">
                           <label for="edate">End date</label>
-                          <input class="form-control">
+                          <input class="form-control" name = "endDate">
                         </div>
                         <div class="form-group">
                             <label for="fees">package fees</label>
-                            <input type="number" class="form-control">
+                            <input type="number" class="form-control" name = "packageFees">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name = "submit">Submit</button>
                       </form>
                 </div>
                         

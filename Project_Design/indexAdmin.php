@@ -91,7 +91,7 @@
                     <form action = 
                         
                    " <?php echo $_SERVER['PHP_SELF'] ?> " method = "POST">
-                           <input type="submit" name="report" value="report"  
+                           <input type="submit" name="report" value="Report"  
                            class="text-white bg-dark p-4">
  
                      </form>

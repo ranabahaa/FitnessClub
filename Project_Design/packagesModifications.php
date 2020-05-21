@@ -63,16 +63,16 @@
                     <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
                     </a>
-                    <a href="<?php echo 'viewPackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                    <a href="<?php echo 'viewpackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">VIEW</h3></button>
                     </a>
                     <a href="<?php echo 'addPackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">ADD</h3></button>
                     </a>
-                    <a href="<?php echo 'updatePackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                    <a href="<?php echo 'updatepackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPDATE</h3></button>
                     </a>
-                    <a href="<?php echo 'deletePackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                    <a href="<?php echo 'deletepackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">DELETE</h3></button>
                     </a>
                 </div>

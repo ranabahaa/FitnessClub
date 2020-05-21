@@ -86,7 +86,7 @@ static function insert($tablename,$value){
   $conn = $connectdb->getConnection();
 
   $sql= "INSERT INTO $tablename VALUES ($value)";
-  echo "sql command : $sql <br>";
+//  echo "sql command : $sql <br>";
    $q=mysqli_query($conn,$sql);
   if($q){
     return 1;
@@ -108,12 +108,12 @@ static public function update($tablename,$records,$idName,$idValue)
   $conn = $connectdb->getConnection();
 	$count = 1;
 	foreach ($records as $key => $value) {
-		echo "$key = $value <br>";
+	//	echo "$key = $value <br>";
 		
 			$query = "UPDATE $tablename SET $key = $value where $idName =  $idValue";
-      echo "query to database $query <br>";
+    //  echo "query to database $query <br>";
 			$result = mysqli_query($conn,$query);
-      echo "<br> $query";
+  //    echo "<br> $query <br>";
 			//echo "<br> mysqli_affected_rows($conn)<br>";
 		if($bool = mysqli_affected_rows($conn) >= 1)
 			{$count = $count +1;
