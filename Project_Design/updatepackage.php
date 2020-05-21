@@ -1,3 +1,15 @@
+<?php
+
+if(isset($_POST['submit']))
+{
+  session_start();
+  $_SESSION['packageId'] = $_POST['packageId'];
+header('Location: packageUpdateTemplate.php');
+}
+
+?>
+
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +72,15 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method = "POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="packageid">Package ID</label>
-                            <input type="number" class="form-control">
+                            <input type="number" class="form-control" name ="packageId">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                        <button type="submit" class="btn btn-primary"
+                      name = "submit">Submit</button>
                       </form>
                 </div>
                         

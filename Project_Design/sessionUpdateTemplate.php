@@ -1,3 +1,20 @@
+<?php
+include("../ApplicationLayer/AdminClass.php");
+if(isset($_POST['submit']))
+{
+    session_start();
+
+$sessionId = $_SESSION['sessionId'];
+//NOTE THAT YOU NEED ADMIN ID FROM LOGIN SESSION VARIABLE AND PLACE IT INSTEAD OF LAST INDEX IN THE ARRAY
+$array =  array($_POST['sessionName'], $_POST['sessionCost'],$_POST['sessionDiscount'] ,$_POST['startTime'],$_POST['endTime'],$_POST['sessionDays'],$_POST['sessionGoal'],$_POST['trainerName'] , 1);
+$admin = new Admin(1);
+
+$admin->updateSession($array,$sessionId);
+
+}
+
+?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -59,44 +76,41 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
-                        <div class="form-group ">
-                          <label for="sessionid">session id</label>
-                          <input type="nuber" class="form-control">
-                        </div>
+                    <form class="addform" method ="POST">
+
                          <div class="form-group">
                           <label for="sessionname">session name</label>
-                          <input type="name" class="form-control">
+                          <input type="name" class="form-control" name="sessionName">
                         </div>
                         <div class="form-group">
                           <label for="sessioncost">session cost</label>
-                          <input type="number" class="form-control">
+                          <input type="number" class="form-control" name = "sessionCost">
                         </div>
                         <div class="form-group">
                           <label for="sessiondiscount">session discount</label>
-                          <input type="number" class="form-control">
+                          <input type="number" class="form-control" name = "sessionDiscount">
                         </div>
                         <div class="form-group">
                             <label for="stime">start time</label>
-                            <input class="form-control">
+                            <input class="form-control" name = "startTime">
                         </div>
                         <div class="form-group">
                             <label for="etime">end time </label>
-                            <input class="form-control">
+                            <input class="form-control" name = "endTime">
                          </div>
                          <div class="form-group">
                             <label for="memberphone">session days</label>
-                            <input class="form-control">
+                            <input class="form-control" name = "sessionDays">
                          </div>
                          <div class="form-group">
                             <label for="sessiongoal">session goal</label>
-                            <input class="form-control">
+                            <input class="form-control" name = "sessionGoal">
                          </div>
                          <div class="form-group">
                             <label for="trainername">trainer name</label>
-                            <input type="name" class="form-control">
+                            <input type="name" class="form-control" name = "trainerName">
                          </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name = "submit">Submit</button>
                       </form>
                 </div>
                         
