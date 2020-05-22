@@ -87,32 +87,41 @@ $admin->updateSession($array,$sessionId);
            <div class="overlay">
                 <div class="container text-white">
                     <form class="addform" method = "POST">
+                        <div class="form-group">
+                            <label for="trainerid">Trainer ID</label>
+                            <input type="number" class="form-control" name = "trainerId">
+                        </div>
                         <div class="form-group ">
                           <label for="trainerfirstname">First Name</label>
-                          <input type="name" class="form-control" id="trainerfirstname" name = "firstName">
+                          <input type="name" class="form-control" name = "firstName">
                         </div>
                          <div class="form-group">
                           <label for="trainerlastname">Last Name</label>
-                          <input type="name" class="form-control" name = "lastName">
+                          <input type="name" class="form-control"  name = "lastName">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail2">Email Address</label>
-                          <input type="email" class="form-control" aria-describedby="emailHelp" name = "email">
+                          <input type="email" class="form-control" aria-describedby="emailHelp"  name = "email">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword2">Password</label>
                           <input type="password" class="form-control" name = "password">
                         </div>
+                    
                         <div class="form-group">
-                            <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" name = "trainerId">
-                        </div>
-                        <div class="form-group">
-                            <label for="trainerphone">Phone Number </label>
-                            <input type="number" class="form-control" name = "phoneNumber">
+                            <label for="trainersalary">salary </label>
+                            <input type="number" class="form-control" >
                          </div>
-                        <button type="submit" class="btn btn-primary" name = "submit">Submit</button>
-                      </form>
+                         <div class="form-group">
+                            <label for="hireddate">Hired date </label>
+                            <input class="form-control" >
+                         </div>
+                         <div class="form-group">
+                            <label for="trainersalary">shifts </label>
+                            <input class="form-control" >
+                         </div>
+                        <button type="submit" class="btn btn-primary" name = "submit">Submit</button> 
+                    </form>
                 </div>
                         
             </div>
