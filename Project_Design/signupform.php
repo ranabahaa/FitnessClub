@@ -57,24 +57,24 @@
                     <form class="addform" method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                         <div class="form-group ">
                         <div class="form-group ">
-                            <label for="memberfirstname" name="fname">First Name</label>
-                            <input type="name" class="form-control" id="memberfirstname">
+                            <label for="memberfirstname">First Name</label>
+                            <input type="name" class="form-control" name="fname">
                         </div>
                         <div class="form-group">
-                            <label for="memberlastname" name="lname">Last Name</label>
-                            <input type="name" class="form-control" id="memberlastname">
+                            <label for="memberlastname">Last Name</label>
+                            <input type="name" class="form-control" name="lname">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1" name="email">Email Address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="ex: ...@anything.com" aria-describedby="emailHelp">
+                            <label for="exampleInputEmail1">Email Address</label>
+                            <input type="email" class="form-control" name="email" placeholder="ex: ...@anything.com" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1" name="password">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" name="password">
                         </div>
                         <div class="form-group">
-                            <label for="memberphone" name="number">Phone Number </label>
-                            <input type="number" class="form-control" id="memberphone" placeholder="ex: 011335.." aria-describedby="emailHelp">
+                            <label for="memberphone">Phone Number </label>
+                            <input type="number" class="form-control" name="number" placeholder="ex: 011335.." aria-describedby="emailHelp">
                         </div>
                         
                         <button type="submit" class="btn btn-primary" name="signupbtn">SignUp</button>

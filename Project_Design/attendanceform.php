@@ -1,5 +1,6 @@
 <?php
-    include('personClass.php');
+    include('PersonClass.php');
+    include('TrainerClass.php');
 ?>
 <html>
     <head>
@@ -17,7 +18,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
 
     </head>
     <body>
@@ -45,6 +45,7 @@
                                             <a href="<?php echo 'index1.php #packages'; ?>">Packages</a>
                                             <a href="<?php echo 'index1.php #branches'; ?>">Our Branches</a>
                                             <a href="<?php echo 'index1.php #contactus'; ?>">Contact Us</a>
+                                            <a href="<?php echo 'changepass.php'; ?>">Change Password</a>
                                          </div>
                                     </div>
                                 </li>
@@ -63,20 +64,20 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                        <div class="form-group">
                             <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" id="trainerid">
+                            <input type="number" class="form-control" name="trainerid">
                         </div>
                         <div class="form-group">
                             <label for="memberid">Member ID</label>
-                            <input type="number" class="form-control" id="memberid">
+                            <input type="number" class="form-control" name="memberid">
                         </div>
                         <div class="form-group">
                             <label for="sessionid">Session ID</label>
-                            <input type="number" class="form-control" id="sessionid">
+                            <input type="number" class="form-control" name="sessionid">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="takeAttendance">Submit</button>
                       </form>
                 </div>
                         

@@ -1,5 +1,5 @@
 <?php
-    include('PersonClass.php');
+    include'PersonClass.php';
 ?>
 
 <html>
@@ -20,14 +20,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
     </head>
-    <body>
-        <!--
-            <div class="neon-wrapper">
-                    <span class="txt">hey</span>
-                    <span class="gradient"></span>
-                    <span class="dodge"></span>
-               </div>
-        -->       
+    <body>    
         <div class="home">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
@@ -115,20 +108,7 @@
             </div>
         
         </section>
-        <!--
-        <section>
-            <div class="container">
-                
-                    <div class=" m-auto">
-                        <button class="bg-danger p-2 px-4 mb-5 text-center text-white myservices">MY SERVICES</button>
-                    </div>
-                    
-                </div>
-            
-            </div>
-        
-        </section>
-        -->
+    
         <section class="work2">
                 <div class="container ">
                     <div class="row">
@@ -254,160 +234,12 @@
                             </a>
                         </div>
                         <div class="check">
-                            <button class="bg-danger text-white font-weight-bold check2">Get In Touch</button>
+                        <a href="<?php echo 'Booking.php'; ?>"><button class="bg-danger text-white font-weight-bold check2">BOOK!</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-    <!-- Modals -->
-        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body modal_one ">
-                            <h1>Zumba</h1>
-                            <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                            <h3>schedule:</h3>
-                            <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                            <div class="datesdiv">
-                                <p>sunday:<br> 16:30->18:30 </p>
-                                <p>wednessday:<br> 14:00->16:00 </p>
-                            </div>
-                            <div class="trainersbuttondiv">
-                                <button class="btn">Ahmed Waleed</button>
-                                <button class="btn">Nancy Farid</button>
-                            </div>
-                            <div class="trainersbuttondiv">
-                                    <button class="btn">Ahmed Waleed</button>
-                                    <button class="btn">Nancy Farid</button>
-                            </div>
-                            <button class="selectbtn text-white">Select</button>
-                            
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body modal_two ">
-                                <h1>Kickboxing</h1>
-                                <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                                <h3>schedule:</h3>
-                                <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                                <div class="datesdiv">
-                                    <p>Monday:<br> 16:00->18:00 </p>
-                                    <p>Thursday:<br> 14:00->16:00 </p>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                    <button class="btn">Karim Adel</button>
-                                    <button class="btn">Menna Shokry</button>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                        <button class="btn">Karim Adel</button>
-                                        <button class="btn">Menna Shokry</button>
-                                </div>
-                                <button class="selectbtn text-white">Select</button>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body modal_three ">
-                                <h1>Cardio</h1>
-                                <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                                <h3>schedule:</h3>
-                                <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                                <div class="datesdiv">
-                                    <p>tuesday:<br> 17:00->19:00 </p>
-                                    <p>saturday:<br> 15:00->17:00 </p>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                    <button class="btn">Ahmed Kamel</button>
-                                    <button class="btn">Aya Saeed</button>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                        <button class="btn">Ahmed Kamel</button>
-                                        <button class="btn">Aya Saeed</button>
-                                </div>
-                                <button class="selectbtn text-white">Select</button>
-                                
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body modal_four ">
-                                <h1>Massage Therapy</h1>
-                                <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                                <h3>schedule:</h3>
-                                <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                                <div class="datesdiv">
-                                    <p>Monday:<br> 16:00->18:00 </p>
-                                    <p>Thursday:<br> 14:00->16:00 </p>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                    <button class="btn">Girl Massager</button>
-                                    <button class="btn">Guy Massager</button>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                        <button class="btn">Girl Massager</button>
-                                        <button class="btn">Guy Massager</button>
-                                </div>
-                                
-                                <button class="selectbtn text-white">Select</button>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body modal_five ">
-                                <h1>Yoga</h1>
-                                <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                                <h3>schedule:</h3>
-                                <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                                <div class="datesdiv">
-                                    <p>saturday:<br> 10:00->11:00 </p>
-                                    <p>Thursday:<br> 18:00->20:00 </p>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                    <button class="btn">Karim Adel</button>
-                                    <button class="btn">Menna Shokry</button>
-                                </div>
-                                <div class="trainersbuttondiv">
-                                        <button class="btn">Karim Adel</button>
-                                        <button class="btn">Menna Shokry</button>
-                                </div>
-                                <button class="selectbtn text-white">Select</button>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body modal_six ">
-                                <h1>Spa & Jacuzzi</h1>
-                                <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                                <h3>schedule:</h3>
-                                <div class="datesdiv">
-                                    <p>All Days<br> 9:00->20:00 </p>
-                                </div>
-
-                                <button class="selectbtn text-white">Select</button>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        <!--end of modals of packages-->    
 
         <section class="six" id="packages">
             <div class="container">
@@ -496,7 +328,7 @@
                                 <p><i class="fas fa-map-marker-alt mr-2"></i>545 New Street, maadi
                                 <br><i class="fas fa-map-marker-alt mr-2 pt-2"></i>21 Abbas ElAkad ,Nasr City</p>
                          </div>
-                         <div class="vl"></div>
+                         <div class="vl">
                             <div class="lastright pt-5">
                                 <h2 class="font-weight-bold">CONTACT INFO</h2>
                                 <p class="pl-2">If you have any questions you can easily contact us</p>
@@ -507,27 +339,8 @@
                                     <i class="fab fa-facebook-f face2"></i>
                                     <i class="fab fa-twitter ok2"></i>
                                     <i class="fab fa-google-plus-g plus2"></i>
-                          <!--
-                          <form >
-							<div class="field">
-								<input type="text" class="form-control" name="name" placeholder="Enter Name" >
-							</div>
-                                <br>
-							<div class="field">
-								<input type="email" class="form-control" name="email" placeholder="Enter Email" >
-							</div>
-                                <br>
-							<div class="field">
-								<textarea class="form-control" name="message" placeholder="Enter Message" rows="6" ></textarea>
-							</div>
-                                <br>
-							<div class="field">
-								<button type="submit" class="btn btn_cta bg-danger text-white">Send Message</button>
-							</div>
-						  </form>
-                        
+                            </div>
                         </div>
-                        -->
                     </div>
                 </div>
             </div>

@@ -96,7 +96,13 @@
                             <label for="trainername">trainer name</label>
                             <input type="name" class="form-control">
                          </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                         <div class="form-group">
+                            <label>Upload Image</label>
+                            <input class="form-control">
+                        </div>
+                        <button class="btn btn-primary">browse</button>
+                        <button class="btn btn-primary">save</button>
+                        <button type="submit" class="btn btn-primary">Submit all</button>
                       </form>
                 </div>
                         

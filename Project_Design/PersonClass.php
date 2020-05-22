@@ -1,5 +1,5 @@
 <?php
-    include'connectdb.php';
+    include'..//DataLayer/Database.php';
     class person{
         
         function __construct(){
@@ -82,6 +82,7 @@
                 $result= mysqli_query($conn,$sql);
                    $_SESSION['message']="welcome";
                    $_SESSION['fname']=$fname;
+                   $_SESSION['email']=$email;
                     header('location:indexMember.php');  
                 }
                 else{
@@ -98,7 +99,7 @@
     if(isset($_POST['loginbtn'])){
         $personobject->login($_POST['mail'],$_POST['pass']);
     }
-    if(isset($_SESSION['logoutbtn'])){
+    if(isset($_POST['logoutbtn'])){
         $personobject->logout();
     }
     if(isset($_POST['changepassbtn'])){

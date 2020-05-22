@@ -1,5 +1,5 @@
 <?php
-    include('personClass.php');
+    include('PersonClass.php');
 ?>
 
 <html>
@@ -62,10 +62,6 @@
                 <div class="container text-white ">
                     <form class="addform" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
                         <div class="form-group ">
-                        <div class="form-group">
-                            <label for="memberid">ID</label>
-                            <input type="number" class="form-control" id="memberid" name="id" placeholder="Enter Your id">
-                        </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email Address</label>
                             <input type="email" name="mail" class="form-control" id="exampleInputEmail1" placeholder="Enter Your mail" aria-describedby="emailHelp">

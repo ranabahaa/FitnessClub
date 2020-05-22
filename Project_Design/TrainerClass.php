@@ -1,5 +1,5 @@
 <?php
-    include'connectdb.php';
+    include_once('..//DataLayer/Database.php');
     class Trainer{
         
         function __construct(){
@@ -8,6 +8,7 @@
             $conn = $connectdb->getConnection();
 
         }
+        /*
         function getTainer($id){
             $connectdb  = connectdb::getInstance();
             $conn = $connectdb->getConnection();
@@ -27,10 +28,8 @@
 
             }
         }
-
-        function getTrainerslist(){
-            //call select all function from database class
-        }
+        */
+        /*
         function getsession($id){
             $connectdb  = connectdb::getInstance();
             $conn = $connectdb->getConnection();
@@ -52,6 +51,7 @@
 
             }
         }
+        */
         function TakeAttendance($trainerid,$memberid,$sessionid){
             $connectdb  = connectdb::getInstance();
             $conn = $connectdb->getConnection();
@@ -59,6 +59,7 @@
               
                 $sql ="INSERT INTO attendance(Trainer_id,Member_id,Session_id) VALUES ('$trainerid','$memberid','$sessionid')";
                 $result= mysqli_query($conn,$sql);
+                   $_SESSION['message']="welcome";
                     echo "attendance done successfuly";
                 }
                 else{
@@ -70,10 +71,10 @@
     if(isset($_POST['getTrainerbtn'])){
         $personobject->getTainer($_POST['id']);
     }  
-    if(isset($_POST['getTrainersbtn'])){
-        $personobject->getTrainerslist();
-    }
     if(isset($_POST['getsessionbtn'])){
         $personobject->getsession($_POST['id']);
+    }  
+    if(isset($_POST['takeAttendancebtn'])){
+        $personobject->TakeAttendance($_POST['trainerid'],$_POST['memberid'],$_POST['sessionid']);
     }  
 ?>        

@@ -59,21 +59,21 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Old Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <input type="password" class="form-control" name="oldpass">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">New Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword2">New Password</label>
+                            <input type="password" class="form-control" name="newpass">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword3">Confirm Password</label>
+                            <input type="password" class="form-control" name="confirmpass">
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="changepassbtn">Submit</button>
                     </form>
                 </div>
                         

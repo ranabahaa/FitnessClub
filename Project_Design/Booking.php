@@ -18,7 +18,7 @@
 
     </head>
     <body>
-       <div class="home" style="height:100vh">
+       <div class="home" style="height: 100vh">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
                     <a href="#"><img src="images/logo3.jpg" class="navimg"></a>
@@ -32,7 +32,7 @@
                                     <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                     <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
+                                    <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">                        
                                     <div class="dropdown">
@@ -59,14 +59,22 @@
                 </nav>
            </div>
            <div class="overlay">
-                <div class="container text-white ">
+                <div class="container text-white">
                     <form class="addform">
-                        <div class="form-group ">
                         <div class="form-group">
-                            <label>Upload Image</label>
-                            <input class="form-control">
+                          <label for="memberid">Member id</label>
+                          <input type="number" class="form-control">
                         </div>
-                        <button class="btn btn-primary">browse</button>
+                        <div class="form-group">
+                            <label for="trainerid">Trainer id</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group ">
+                          <label for="sessionid">session id</label>
+                          <input type="number" class="form-control">
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary">Submit</button>
                       </form>
                 </div>
                         
