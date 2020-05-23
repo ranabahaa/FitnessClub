@@ -1,5 +1,7 @@
 <?php
     include('PersonClass.php');
+    $mail=$_SESSION['mail'];
+    
 ?>
 
 <html>
@@ -54,6 +56,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href="<?php echo 'indexMember.php'; ?>"><i class="fas fa-user-circle text-white width:10%"></i> MY PROFILE</a>
                                         
+                                </li>
+                                <li class="nav-item text-white">
+                                   hello <?php echo htmlspecialchars($mail);  ?> 
                                 </li>
                                 
                                 <li class="nav-item bg-dark" style="width: 40%">                        

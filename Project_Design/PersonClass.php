@@ -1,9 +1,10 @@
 <?php
     include'..//DataLayer/Database.php';
+    session_start();
+    $mail=$_SESSION['mail'];
     class person{
         
         function __construct(){
-            session_start();
             $connectdb  = connectdb::getInstance();
             $conn = $connectdb->getConnection();
 
@@ -14,12 +15,16 @@
             $conn = $connectdb->getConnection();
             if(!empty($mail) AND !empty($pass)){
               
-                $sql ="SELECT Member_email and Member_password FROM member WHERE Member_email = '$mail' and Member_password = '$pass'";
+                $sql ="SELECT Member_email and Member_password and Member_id FROM member WHERE Member_email = '$mail' and Member_password = '$pass'";
                 $result= mysqli_query($conn,$sql);
                if(mysqli_num_rows($result)==1){
-                   $_SESSION['message']="welcome";
+                   session_start();
                    $_SESSION['mail']=$mail;
-                    header('location:indexMember.php');       
+                   $_SESSION['pass']=$pass;
+                   $_SESSION['id']=$id;
+                   
+                    header('location:indexMember.php'); 
+                    echo "welcome".$_SESSION['mail'];      
 
                     } 
                     else{
@@ -30,6 +35,7 @@
                 else{
                     echo "Please enter email and password";
                 }
+
             
            
         }
