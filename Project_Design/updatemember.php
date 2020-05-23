@@ -1,3 +1,16 @@
+<?php
+
+if(isset($_POST['submit']))
+{
+    session_start();
+$_SESSION['memberId'] = $_POST['id'];
+header("Location: memberUpdateTemplate.php");
+}
+
+
+?>
+
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +73,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method = "POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="memberid">Member ID</label>
-                            <input type="number" class="form-control" id="memberid">
+                            <input type="number" class="form-control" id="memberid" name = 'id'>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name = "submit">Submit</button>
                       </form>
                 </div>
                         

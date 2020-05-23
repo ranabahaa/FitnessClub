@@ -1,3 +1,11 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+ if (isset($_POST['submit']))
+    {
+$Ad = new Admin(1);
+$PId=$Ad ->ViewPackage($_POST['packageId']);
+}
+ ?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +68,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="packageid">Package ID</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="packageId" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">submit</button>
+                        <button type="submit" name="submit" class="btn btn-primary">submit</button>
                       </form>
                 </div>
                         
@@ -102,3 +110,48 @@
     </body>
 
 </html>
+<?php 
+                                    
+ if (isset($_POST['submit']))
+    {
+ 
+  session_start();
+  $_SESSION['id'] = $_POST['packageId'];
+
+  ?>
+         
+         <html>
+  
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold">Package</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$PId as  $package) {?>
+                           <div class="class-content center">
+                                <div class="one temp" style="background-color: #FAF3DC;">
+                                    
+                   <div><?php echo "Package Id → " . ($package['Package_id']); ?></div>
+                    <div><?php echo "Package Duration → ".($package['Package_duration']); ?></div>
+                    <div><?php echo "Begining Date → ".($package['Beginning_date']); ?></div>
+                    <div><?php echo "End Date → ".($package['End_date']); ?></div>
+                    <div><?php echo "Package Fee → ".($package['Package_fee']); ?></div>  
+                    <div><?php echo "Admin Id → ".($package['Admin_id']); ?></div>
+                    <div><?php echo "Session Details → ".($package['sessionsDetails']); ?></div>  
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
+<?php }?>          
+
+         </html>         

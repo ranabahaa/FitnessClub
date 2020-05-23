@@ -90,7 +90,7 @@ class Admin implements Subject
 		public function updateMember($memberDetails,$memberId)
 	{
 		$member =  array(' Member_Fname ' => "'$memberDetails[0]'",' Member_Lname '=>" '$memberDetails[1]' ",' Member_email '=>" '$memberDetails[2] '",'Member_password '=>" '$memberDetails[3]' ",' MobileNumber '=> " '$memberDetails[4]' ");
-		echo "mobile phone is $memberDetails[4]<br>";
+		//echo "mobile phone is $memberDetails[4]<br>";
 		Database::update("member",$member,' Member_id ',$memberId);
 	}
 
@@ -113,6 +113,149 @@ class Admin implements Subject
 
 
 	}
+	
+    	public function AddSession($SessionId,$SessionName,$SessionCost,$Discount,$StartTime,$EndTime,$SessionDays,$SessionGoal,$TrainerName)
+ 	{
+ 	   //connect DB
+ 	 $TableName="sessions(Session_id,Session_name,Session_cost,discount,Start_time,End_time,Session_days,Session_goal,Trainer_name)";
+ 	 $Values = "'$SessionId','$SessionName','$SessionCost','$Discount','$StartTime','$EndTime','$SessionDays','$SessionGoal','$TrainerName'"; 
+
+ 	 Database::insert($TableName,$Values);
+
+
+ 	/* $Db = new DataBase();   //connect DB
+ 	 $TableName="Sessions(Session_id,Session_name,Session_cost,discount,Start_time,End_time,Session_days,Session_goal,Trainer_name)";
+ 	 $Values = "'$SessionId','$SessionName','$SessionCost','$Discount','$StartTime','$EndTime','$SessionDays','$SessionGoal','$TrainerName'"; 
+ 	if( $Db -> insert($TableName,$Values))
+ 	{
+ 		echo" inserted";
+ 	}
+ 	else{
+ 		echo "error";
+ 	}
+ 	 */
+ 	}	
+
+
+ 	 function deleteMember($id)
+	{
+	   //$connectdb  = connectdb::getInstance();
+       //$conn = $connectdb->getConnection();
+       $tableName = 'member';
+       $memberId = 'member_id';
+       Database::deletefunction ($tableName,$memberId,$id) ;
+	}
+	 function addMember($fristName,$lastName,$emailAddress,$password,$memberId,$phoneNumber)
+	{   
+
+		$tableName = 'member';
+		$values="'$memberId','$fristName','$lastName','$emailAddress','$password','$phoneNumber'";
+	  // $arrayName = array('Member_Fname' => $fristName,'Member_Lname' => $lastName,'Member_email' => $emailAddress,'Member_password' => $password ,'Member_id' => $memberId,'MobileNumber' => $phoneNumber);
+
+	Database::insert($tableName,$values);
+
+
+	}
+	function addPackage($packageId,$packageDuration,$beginingDate,$endDate,$packageFee,$adminId,$sessionsDetails)
+	{
+		$tableName = 'packages';
+		$values="'$packageId','$packageDuration','$beginingDate','$endDate','$packageFee','$adminId' ,'$sessionsDetails' ";
+		//$arr = $arrayName = array('Package_id' => $packageId,'Package_duration' => $packageDuration ,'Beginning_date' => $beginingDate ,'End_date' => $endDate ,'Package_fee' => $packageFree ,'Admin_id' => $adminId ,'sessionsDetails' => $sessionsDetails );
+
+		Database::insert($tableName,$values);	
+								 	
+	}
+		 function deletePackage($id)
+	{
+		$tableName = 'packages';
+		$packageId = 'Package_id';
+		
+		 Database:: deletefunction ($tableName,$packageId,$id) ;
+
+	}
+	function upload_image($SessionId)
+    {
+      # code...
+     // HABDT ATIIA 
+
+  $db = new DataBase();
+  $db->upload_Image($SessionId);     
+
+    }
+      public function ListSessions()
+ 	{
+ 		$Db = new DataBase(); 
+ 		return $Db ->  selectAll("sessions");
+ 	}
+
+ 	public function ViewSession($SId)
+ 	{
+ 		$Db = new DataBase(); 
+ 		return $Db->selectRecord("sessions","Session_id",$SId);
+ 	}
+
+ 	function display($SessionId){
+ 		$db = new Database();
+ 		$db->Display($SessionId);
+
+
+ 	}
+
+
+ 	 	public function AddTrainer($Id,$FirstName,$LastName,$Email,$Password,$Salary,$HiredDate,$Shift)
+ 	{
+ 	
+ 	 $Db = new DataBase();   //connect DB
+ 	 $TableName="trainer(Trainer_id,Trainer_Fname,Trainer_Lname,Trainer_email,Trainer_password,Trainer_salary,Hired_Date,Shifts)";
+ 	 $Values = "'$Id','$FirstName','$LastName','$Email','Password','$Salary','$HiredDate','$Shift'"; //new trainer data
+ 	 $Db -> insert($TableName,$Values);
+ 	 
+ 	}	
+ 		public function DeleteTrainer($Id)
+ 	{
+ 		$Db = new DataBase();
+ 		$Db->deletefunction("trainer","Trainer_id",$Id);
+
+ 	}
+ 		public function DeleteSession($SessionId)
+ 	{
+ 		$Db = new DataBase();
+ 		$Db->deletefunction("sessions"," Session_id ",$SessionId);
+
+ 	}
+	public function ListPackages()
+ 	{
+ 		$Db = new DataBase(); 
+ 		return $Db ->  selectAll("packages");
+ 	
+ 	}
+
+
+ 	public function Search($Id)
+ 	{
+ 		$Db = new DataBase(); 
+ 		return $Db->selectRecord("trainer","Trainer_id",$Id);
+ 	}
+
+ 	public function ViewMemberAttendance($SessionId)
+ 	{
+ 		$Db = new DataBase(); 
+ 		//$TableName="MemberAttendance(Member_id,Trainer_id)";
+ 		return $Db->selectRecord("attendance","Session_id",$SessionId);
+
+ 	}
+ 	public function ViewPackage($PId)
+ 	{
+ 		$Db = new DataBase(); 
+ 		return $Db->selectRecord("packages","Package_id",$PId);
+ 	}
+
+ 	public function ViewMember($MId)
+ 	{
+ 		$Db = new DataBase(); 
+ 		return $Db->selectRecord("member","Member_id",$MId);
+ 	}
+
 	
 }
 

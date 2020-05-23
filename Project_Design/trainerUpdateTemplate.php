@@ -8,19 +8,17 @@ session_start();
 
 $id = $_SESSION['trainerId'];
 //NOTE YOU NEED TO CHANGE 
-$array =  array($_POST['firstName'], $_POST['lastName'],$_POST['email'] ,$_POST['password'], $_POST['trainerId'], $_POST['phoneNumber'],1);
+$array =  array($_POST['firstName'], $_POST['lastName'],$_POST['email'] ,$_POST['password'], $_POST['salary'], $_POST['hiredDate'],$_POST['shifts']);
 
 $admin = new Admin(1);
 
-$admin->updateSession($array,$sessionId);
+$admin->updateTrainer($array,$id);
 
 
 
 }
 
  ?>
-
-
 
 
 
@@ -87,9 +85,10 @@ $admin->updateSession($array,$sessionId);
            <div class="overlay">
                 <div class="container text-white">
                     <form class="addform" method = "POST">
+
                         <div class="form-group ">
                           <label for="trainerfirstname">First Name</label>
-                          <input type="name" class="form-control" id="trainerfirstname" name = "firstName">
+                          <input type="name" class="form-control" name = "firstName">
                         </div>
                          <div class="form-group">
                           <label for="trainerlastname">Last Name</label>
@@ -103,13 +102,18 @@ $admin->updateSession($array,$sessionId);
                           <label for="exampleInputPassword2">Password</label>
                           <input type="password" class="form-control" name = "password">
                         </div>
+                    
                         <div class="form-group">
-                            <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" name = "trainerId">
-                        </div>
-                        <div class="form-group">
-                            <label for="trainerphone">Phone Number </label>
-                            <input type="number" class="form-control" name = "phoneNumber">
+                            <label for="trainersalary">salary </label>
+                            <input type="number" class="form-control"name = "salary" >
+                         </div>
+                         <div class="form-group">
+                            <label for="hireddate">Hired date </label>
+                            <input class="form-control" name = "hiredDate">
+                         </div>
+                         <div class="form-group">
+                            <label for="trainersalary">shifts </label>
+                            <input class="form-control" name = "shifts" >
                          </div>
                         <button type="submit" class="btn btn-primary" name = "submit">Submit</button>
                       </form>

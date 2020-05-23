@@ -1,3 +1,14 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+
+    if(isset($_POST['Submit']))
+    {
+        $admin = new Admin(1);
+         
+        $admin->addMember($_POST['memberfname'],$_POST['memberlname'],$_POST['memberemail'],$_POST['memberpassword'],$_POST['memberid'],$_POST['memberphone']);
+      
+    }
+?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -59,32 +70,32 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                           <label for="memberfirstname">First Name</label>
-                          <input type="name" class="form-control" aria-describedby="emailHelp">
+                          <input type="name" name="memberfname" class="form-control" aria-describedby="emailHelp"  >
                         </div>
                          <div class="form-group">
                           <label for="memberlastname">Last Name</label>
-                          <input type="name" class="form-control" aria-describedby="emailHelp">
+                          <input type="name" name="memberlname" class="form-control" aria-describedby="emailHelp" >
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email Address</label>
-                          <input type="email" class="form-control" aria-describedby="emailHelp">
+                          <input type="email" name="memberemail" class="form-control" aria-describedby="emailHelp" >
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control">
+                          <input type="password" name="memberpassword" class="form-control" >
                         </div>
                         <div class="form-group">
                             <label for="memberid">Member ID</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="memberid" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="memberphone">Phone Number </label>
-                            <input type="number" class="form-control" aria-describedby="emailHelp">
+                            <input type="number" name="memberphone" class="form-control" aria-describedby="emailHelp" >
                          </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" name="Submit" value="Submit" class="btn btn-primary" /> 
                       </form>
                 </div>
                         

@@ -60,12 +60,10 @@
            </div>
            <div class="overlay">
                 <div class="container middle text-white choose">
-                    <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                    <a href="<?php echo ' listsession.php '; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
                     </a>
-                    <a href="<?php echo 'uploadimage.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">UPLOAD</h3></button>
-                    </a>
+
                     <a href="<?php echo 'viewsession.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">View</h3></button>
                     </a>

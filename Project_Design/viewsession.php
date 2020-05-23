@@ -1,3 +1,11 @@
+<?php 
+include('../ApplicationLayer/AdminClass.php');
+ if (isset($_POST['submit']))
+    {
+$Ad = new Admin(1);
+$SId=$Ad ->ViewSession($_POST['sessionId']);
+}
+ ?>
 
 <html>
     <head>
@@ -61,13 +69,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
-                            <label for="sessionid">session ID</label>
-                            <input type="number" class="form-control">
+                            <label for="sessionid">Session ID</label>
+                            <input type="number" name="sessionId" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">submit</button>
+                        <button type="submit" name="submit" class="btn btn-primary">submit</button>
                     </form>
                 </div>
                         
@@ -103,3 +111,51 @@
     </body>
 
 </html>
+<?php 
+                                    
+ if (isset($_POST['submit']))
+    {
+ 
+  session_start();
+  $_SESSION['id'] = $_POST['sessionId'];
+
+  ?>
+         
+         <html>
+  
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold">Session</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$SId as  $session) {?>
+                           <div class="class-content center">
+                                <div class="one temp" style="background-color: #FAF3DC;">
+                                    
+                    <div><?php echo "Session Id → " . ($session['Session_id']); ?></div>
+                    <div><?php echo "Session Name → ".($session['Session_name']); ?></div>
+                    <div><?php echo "Session Cost → ".($session['Session_cost']); ?></div>
+                    <div><?php echo "Discount → ".($session['discount']); ?></div>
+                    <div><?php echo "Start Time → ".($session['Start_time']); ?></div>  
+                    <div><?php echo "End Time → ".($session['End_time']); ?></div>
+                    <div><?php echo "Session Days → ".($session['Session_days']); ?></div>
+                    <div><?php echo "Session Goals → ".($session['Session_goal']); ?></div>
+                    <div><?php echo "Trainer Name → ".($session['Trainer_name']); ?></div>
+                    <div> <?php $Ad-> display($session['Session_id']); ?></div>           
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
+<?php }?>          
+
+         </html>         

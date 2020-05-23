@@ -60,14 +60,12 @@
            </div>
            <div class="overlay">
                 <div class="container middle text-white choose">
-                    <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
-                    </a>
+
                     <a href="<?php echo 'searchtrainer.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">SEARCH</h3></button>
                     </a>
                     <a href="<?php echo 'viewtrainer.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
-                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">VIEW</h3></button>
+                        <button class="text-white p-2 px-4 button "> <h3 class="m-1">VIEW ATTENDANCE</h3></button>
                     </a>
                     <a href="<?php echo 'addtrainer.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">ADD</h3></button>

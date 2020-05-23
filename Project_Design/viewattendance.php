@@ -1,3 +1,14 @@
+<?php 
+include ('../ApplicationLayer/Admin.php');
+ if (isset($_POST['submit']))
+    {
+$Ad = new Admin();
+$atts=$Ad ->ViewMemberAttendance($_POST['sessionId']);
+}
+ ?>
+
+
+         
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -18,7 +29,7 @@
 
     </head>
     <body>
-       <div class="home" style="height: 100vh">
+       <div class="home" style="height:100vh">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
                     <a href="#"><img src="images/logo3.jpg" class="navimg"></a>
@@ -47,7 +58,7 @@
                                 </li>
                                   
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="<?php echo 'indexMember.php'; ?>"><i class="fas fa-user-circle text-white width:10%"></i>MY PROFILE</a>
+                                    <a class="nav-link text-white" href="<?php echo 'indexAdmin.php'; ?>"><i class="fas fa-user-circle text-white width:10%"></i> MANAGE USERS</a>
                                         
                                 </li>
                                 <li class="nav-item">
@@ -58,88 +69,24 @@
                         </div>
                 </nav>
            </div>
-           <div class="overlay ">
-             
-                <div class="container middle">
-                    <div class="row ">
-                            <div class="totaldivs">
-                                    <h1 class="font-weight-bold text-white">Extra Sessions</h1>
-                                    <div>
-                                        <a data-toggle="modal" data-target="#exampleModal1">  
-                                            <div class="one zumba">
-                                               <i class="fas fa-music"></i>
-                                                <h4 class="font-weight-bold">Zumba</h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a data-toggle="modal" data-target="#exampleModal2">
-                                            <div class="two kickboxing">
-                                                <i class="fas fa-running"></i>
-                                                <h4 class="font-weight-bold">KickBoxing</h4>
-                                            </div>
-                                        </a> 
-                                    </div>
-                                </div>
-                    </div>
-                </div>          
+           <div class="overlay">
+                <div class="container text-white ">
+                    <form class="addform" method="POST">
+                        <div class="form-group ">
+                        <div class="form-group">
+                            <label for="sessionid">Session ID</label>
+                            <input type="number" name="sessionId" class="form-control" id="sessionid">
+                        </div>
+                         <a  href="<?php echo 'listpackage.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button type="submit" name="submit" class="btn btn-primary">View</button>
+                      </a>
+                      </form>
+                </div>
+                        
             </div>
        </div>
-       <!--start of popup modals-->
-       <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body modal_one ">
-                        <h1>Zumba</h1>
-                        <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                        <h3>schedule:</h3>
-                        <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                        <div class="datesdiv">
-                            <p>sunday:<br> 16:30->18:30 </p>
-                            <p>wednessday:<br> 14:00->16:00 </p>
-                        </div>
-                        <div class="trainersbuttondiv">
-                            <button class="btn">Ahmed Waleed</button>
-                            <button class="btn">Nancy Farid</button>
-                        </div>
-                        <div class="trainersbuttondiv">
-                                <button class="btn">Ahmed Waleed</button>
-                                <button class="btn">Nancy Farid</button>
-                        </div>
-                        <button class="selectbtn text-white">Select</button>
-                        
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body modal_two ">
-                            <h1>Kickboxing</h1>
-                            <p style="padding-left: 10px">-If you want to improve your cardiovascular fitness<br> while having fun and dancing then this is the right class for you. </p>
-                            <h3>schedule:</h3>
-                            <h5 style="margin-left: 10px; margin-bottom:20px">Choose a trainer</h5>
-                            <div class="datesdiv">
-                                <p>Monday:<br> 16:00->18:00 </p>
-                                <p>Thursday:<br> 14:00->16:00 </p>
-                            </div>
-                            <div class="trainersbuttondiv">
-                                <button class="btn">Karim Adel</button>
-                                <button class="btn">Menna Shokry</button>
-                            </div>
-                            <div class="trainersbuttondiv">
-                                    <button class="btn">Karim Adel</button>
-                                    <button class="btn">Menna Shokry</button>
-                            </div>
-                            <button class="selectbtn text-white">Select</button>
-                        </div>
-                    </div>
-                </div>
-        </div>
-        <!--end of popup modals-->
-      
+        
        <script>
            /* When the user clicks on the button, 
               toggle between hiding and showing the dropdown content */
@@ -170,3 +117,48 @@
     </body>
 
 </html>
+                 <?php 
+                                    
+ if (isset($_POST['submit']))
+    {
+ //$Ad ->DeleteSession( $_POST['sessionid']);
+  session_start();
+  $_SESSION['id'] = $_POST['sessionId'];
+//header('Location: memberattendance.php');
+  ?>
+       
+         <html>
+  
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold">Member Attendance</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$atts as  $att) {?>
+                           <div class="class-content center">
+                                <div class="one temp" style="background-color: #FAF3DC;">
+                                    
+                    <div><?php echo "Trainer Id → " . ($att['Trainer_id']); ?></div>
+                    <div><?php echo "Package Id → ".($att['Member_id']); ?></div>
+                    <div><?php echo "Session Id → ".($att['Session_id']); ?></div>
+                    <div><?php echo " Date → ".($att['Date']); ?></div>
+                    <div><?php echo "Count → ".($att['Count']); ?></div>  
+                                  
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
+<?php }?>          
+
+         </html>         
+                   

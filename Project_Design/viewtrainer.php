@@ -1,3 +1,14 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+ if (isset($_POST['submit']))
+    {
+$Ad = new Admin(1);
+$atts=$Ad ->ViewMemberAttendance($_POST['sessionId']);
+}
+ ?>
+
+
+         
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,18 +71,22 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
-                            <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" id="trainerid">
+                            <label for="sessionid">Session ID</label>
+                            <input type="number" name="sessionId" class="form-control" id="sessionid">
                         </div>
-                        <button type="submit" class="btn btn-primary">View</button>
+                         <a  href="<?php echo 'listpackage.php'; ?>" class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                        <button type="submit" name="submit" class="btn btn-primary">View</button>
+                      </a>
                       </form>
                 </div>
                         
             </div>
        </div>
+
+        
        <script>
            /* When the user clicks on the button, 
               toggle between hiding and showing the dropdown content */
@@ -102,3 +117,48 @@
     </body>
 
 </html>
+                 <?php 
+                                    
+ if (isset($_POST['submit']))
+    {
+ //$Ad ->DeleteSession( $_POST['sessionid']);
+  session_start();
+  $_SESSION['id'] = $_POST['sessionId'];
+//header('Location: memberattendance.php');
+  ?>
+       
+         <html>
+  
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold">Member Attendance</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$atts as  $att) {?>
+                           <div class="class-content center">
+                                <div class="one temp" style="background-color: #FAF3DC;">
+                                    
+                    <div><?php echo "Trainer Id → " . ($att['Trainer_id']); ?></div>
+                    <div><?php echo "Package Id → ".($att['Member_id']); ?></div>
+                    <div><?php echo "Session Id → ".($att['Session_id']); ?></div>
+                    <div><?php echo " Date → ".($att['Date']); ?></div>
+                    <div><?php echo "Count → ".($att['Count']); ?></div>  
+                                  
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
+<?php }?>          
+
+         </html>         
+                   

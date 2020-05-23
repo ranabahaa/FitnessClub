@@ -1,3 +1,11 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+$Ad = new Admin(1);                                     
+ if (isset($_POST['submit'])){
+ $Ad ->DeleteSession( $_POST['sessionid']);
+}
+
+ ?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +68,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="sessionid">session ID</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="sessionid" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                       </form>
                 </div>
                         

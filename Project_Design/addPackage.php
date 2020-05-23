@@ -1,3 +1,14 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+
+    if(isset($_POST['submit']))
+    {
+        $admin = new Admin(1);
+       
+         $admin ->addPackage($_POST['package_Id'],$_POST['package_Duration'],$_POST['beginging_Date'],$_POST['end_Date'],$_POST['package_fee'],$_POST['admin_Id'],$_POST['session_Details']);
+      
+    }
+?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -59,29 +70,36 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                           <label for="packageid">Package id</label>
-                          <input type="number" class="form-control">
+                          <input type="number" name ="package_Id" class="form-control">
                         </div>
                          <div class="form-group">
                           <label for="memberlastname">Package Duration</label>
-                          <input class="form-control">
+                          <input class="form-control" name="package_Duration">
                         </div>
                         <div class="form-group">
                           <label for="bdate">Beginning date</label>
-                          <input class="form-control">
+                          <input class="form-control" name="beginging_Date">
                         </div>
                         <div class="form-group">
                           <label for="edate">End date</label>
-                          <input class="form-control">
+                          <input class="form-control" name="end_Date">
                         </div>
                         <div class="form-group">
                             <label for="fees">package fees</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="package_fee" class="form-control">
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                         <div class="form-group">
+                            <label for="adminId">Admin Id</label>
+                            <input type="number" name="admin_Id" class="form-control">
+                        </div>
+                         <div class="form-group">
+                            <label for="sessionDetails">Session Details</label>
+                            <input  name="session_Details" class="form-control">
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                       </form>
                 </div>
                         

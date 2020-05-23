@@ -32,10 +32,10 @@ static function selectAll($tablename)
 	 {
 	return $arrayOfResult;
 	 }
-	else
-	 {
-		return 0; 
-    }
+ else{
+echo mysqli_error($conn);
+     }
+
   }
 
    //Select Record	
@@ -70,9 +70,10 @@ static function selectAll($tablename)
                     
              if (mysqli_query($conn, $sql)) {
           return 1;
-             } else {
-              return 0 ; 
-            }
+             } 
+     else{
+echo mysqli_error($conn);
+  }
                 
 
             }
@@ -89,10 +90,11 @@ static function insert($tablename,$value){
 //  echo "sql command : $sql <br>";
    $q=mysqli_query($conn,$sql);
   if($q){
+
     return 1;
   }
   else{
-  return 0;
+echo mysqli_error($conn);
   }
 }
 
@@ -126,11 +128,55 @@ static public function update($tablename,$records,$idName,$idValue)
 	{
 		return 1;
 	}
-	else {
-		return 0;
-	}
+ else{
+echo mysqli_error($conn);
+     }
 
 }
+function Display($SessionId){
+    //ATTIA HABDA
+
+               //  $connect = mysqli_connect("localhost", "ahmed", "12345", "project");
+    $connect = connectdb::getInstance();
+    $connect=$connect->getConnection();
+                 $query = " SELECT image FROM sessions where Session_id = $SessionId " ;
+                $result = mysqli_query($connect,$query);  
+                print_r($result);
+                while($row = mysqli_fetch_array($result))  
+                {  
+                     echo '  
+                          <tr>  
+                               <td>  
+                                    <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200" class="img-thumnail" />  
+                               </td>  
+                          </tr>  
+                     ';  
+                }  
+
+
+  }
+
+
+  function upload_Image($SessionId)
+    {
+      # code...
+     // HABDT ATIIA 
+
+ $connect = connectdb::getInstance();
+    $connect=$connect->getConnection();
+
+    // $connectdb  = connectdb::getInstance();
+
+  //$connect = $connectdb->getConnection()
+   
+      $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
+      $query = " UPDATE sessions SET image = ('$file') where Session_id = $SessionId";
+      if(mysqli_query($connect, $query))  
+      {  
+           echo '("Image Inserted into Database")';  
+        }       
+
+    }
 //End of class
 }
 

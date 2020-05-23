@@ -1,3 +1,11 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+$Ad = new Admin(1);                                     
+ if (isset($_POST['submit'])){
+ $Ad ->DeleteTrainer( $_POST['trainerid']);
+}
+
+ ?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +68,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" id="trainerid">
+                            <input type="number" name="trainerid" class="form-control" id="trainerid">
                         </div>
-                        <button type="submit" class="btn btn-primary">Delete</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Delete</button>
                       </form>
                 </div>
                         

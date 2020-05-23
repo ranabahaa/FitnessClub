@@ -1,3 +1,16 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+
+    if(isset($_POST['Submit']))
+    {
+        $admin = new Admin(1);
+
+        //   $get_parameters="action=view & file = indexAdmin.pdf";
+    //   echo "<a href='indexAdmin.php?$get_parameters' target='_blank'></a>";
+        $admin->deletePackage($_POST['packageid']);
+        //echo "Report button done <br>";
+    }
+?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +73,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
                             <label for="packageid">Package ID</label>
-                            <input type="number" class="form-control">
+                            <input type="number" name="packageid" class="form-control" id="packageid">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="submit" name="Submit" value="Submit" class="btn btn-primary" /> 
                       </form>
                 </div>
                         

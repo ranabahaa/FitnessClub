@@ -1,3 +1,12 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+ if (isset($_POST['submit']))
+    {
+$Ad = new Admin(1);
+$tId=$Ad ->Search($_POST['trainerId']);
+}
+ ?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,13 +69,13 @@
            </div>
            <div class="overlay">
                 <div class="container text-white ">
-                    <form class="addform">
+                    <form class="addform" method="POST">
                         <div class="form-group ">
                         <div class="form-group">
-                            <label for="memberid">Member ID</label>
-                            <input type="number" class="form-control" id="memberid">
+                            <label for="memberid">Trainer ID</label>
+                            <input type="number" name="trainerId" class="form-control" id="trainerId">
                         </div>
-                        <button type="submit" class="btn btn-primary">View</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Search</button>
                       </form>
                 </div>
                         
@@ -102,3 +111,49 @@
     </body>
 
 </html>
+<?php 
+                                    
+ if (isset($_POST['submit']))
+    {
+ 
+  session_start();
+  $_SESSION['id'] = $_POST['trainerId'];
+
+  ?>
+         
+         <html>
+  
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold">Trainer</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$tId as  $data) {?>
+                           <div class="class-content center">
+                                <div class="one temp" style="background-color: #FAF3DC;">
+                                    
+                    <div><?php echo "Trainer Id → " . ($data['Trainer_id']); ?></div>
+                    <div><?php echo "Trainer First NAME → ".($data['Trainer_Fname']); ?></div>
+                    <div><?php echo "rainer Last NAME  → ".($data['Trainer_Lname']); ?></div>
+                    <div><?php echo "Trainer Email → ".($data['Trainer_email']); ?></div>
+                    <div><?php echo " Trainer Password → ".($data['Trainer_password']); ?></div>
+                    <div><?php echo "Trainer Salary → ".($data['Trainer_salary']); ?></div>  
+                    <div><?php echo "Hired Date → ".($data['Hired_Date']); ?></div>
+                    <div><?php echo "Shift → ".($data['Shifts']); ?></div>                 
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
+<?php }?>          
+
+         </html>         

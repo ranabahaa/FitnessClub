@@ -60,7 +60,7 @@
            </div>
            <div class="overlay">
                 <div class="container middle text-white choose">
-                    <a class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
+                    <a href="<?php echo 'listpackage.php'; ?>"class="chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">
                         <button class="text-white p-2 px-4 button "> <h3 class="m-1">LIST</h3></button>
                     </a>
                     <a href="<?php echo 'viewpackage.php'; ?>" class=" chooseMemberModification middle btn btn_inverse cover_cta scroll text-white ">

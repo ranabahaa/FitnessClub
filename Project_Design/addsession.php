@@ -1,3 +1,17 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+
+   if(isset($_POST["submit"]))    {
+        $admin = new Admin(1);
+        $admin-> AddSession( $_POST['sessionid'], $_POST['sessionname'],$_POST['sessioncost'],$_POST['sessiondiscount'],$_POST['stime'],$_POST['etime'], $_POST['sessionDays'],$_POST['sessiongoal'],$_POST['trainername']);
+        //   $get_parameters="action=view & file = indexAdmin.pdf";
+    //   echo "<a href='indexAdmin.php?$get_parameters' target='_blank'></a>";
+        $admin->upload_image($_POST['sessionid']);
+
+        //echo "Report button done <br>";
+    }
+?>
+
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -59,44 +73,50 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="post" enctype="multipart/form-data">
                         <div class="form-group ">
+                
                           <label for="sessionid">session id</label>
-                          <input type="nuber" class="form-control">
+                          <input type="number" name="sessionid" class="form-control">
                         </div>
                          <div class="form-group">
                           <label for="sessionname">session name</label>
-                          <input type="name" class="form-control">
+                          <input type="name" name="sessionname" class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="sessioncost">session cost</label>
-                          <input type="number" class="form-control">
+                          <input type="number" name="sessioncost" class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="sessiondiscount">session discount</label>
-                          <input type="number" class="form-control">
+                          <input type="number" name="sessiondiscount" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="stime">start time</label>
-                            <input class="form-control">
+                            <input class="form-control" name="stime">
                         </div>
                         <div class="form-group">
                             <label for="etime">end time </label>
-                            <input class="form-control">
+                            <input class="form-control" name="etime">
                          </div>
                          <div class="form-group">
                             <label for="memberphone">session days</label>
-                            <input class="form-control">
+                            <input class="form-control" name="sessionDays">
                          </div>
                          <div class="form-group">
                             <label for="sessiongoal">session goal</label>
-                            <input class="form-control">
+                            <input class="form-control" name="sessiongoal">
                          </div>
                          <div class="form-group">
                             <label for="trainername">trainer name</label>
-                            <input type="name" class="form-control">
+                            <input type="name" name="trainername" class="form-control">
                          </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                            <label>Upload Image</label>
+                         <input type="file" name="image" id="image" />  
+                        <br />  
+                        <!--  --> 
+
+                         <button type="submit" name="submit" class="btn btn-primary">Submit all</button>
                       </form>
                 </div>
                         
@@ -130,5 +150,27 @@
 
 
     </body>
+    <script>  
+ $(document).ready(function(){  
+      $('#insert').click(function(){  
+           var image_name = $('#image').val();  
+           if(image_name == '')  
+           {  
+                alert("Please Select Image");  
+                return false;  
+           }  
+           else  
+           {  
+                var extension = $('#image').val().split('.').pop().toLowerCase();  
+                if(jQuery.inArray(extension, ['gif','png','jpg','jpeg']) == -1)  
+                {  
+                     alert('Invalid Image File');  
+                     $('#image').val('');  
+                     return false;  
+                }  
+           }  
+      });  
+ });  
+ </script>
 
 </html>

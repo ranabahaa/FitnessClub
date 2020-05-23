@@ -1,3 +1,10 @@
+<?php 
+include ('../ApplicationLayer/AdminClass.php');
+$ad = new Admin(1); 
+if (isset($_POST['submit'])){
+  $ad-> AddTrainer( $_POST['trainerid'], $_POST['trainerfirstname'],$_POST['trainerlastname'],$_POST['email'],$_POST['password'],$_POST['trainersalary'], $_POST['hireddate'],$_POST['trainershifts']);
+} 
+ ?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -60,32 +67,41 @@
            </div>
            <div class="overlay">
                 <div class="container text-white">
-                    <form class="addform">
+                    <form class="addform" method="POST">
+                        <div class="form-group">
+                            <label for="trainerid">Trainer ID</label>
+                            <input type="number" name="trainerid" class="form-control">
+                        </div>
                         <div class="form-group ">
                           <label for="trainerfirstname">First Name</label>
-                          <input type="name" class="form-control" id="trainerfirstname">
+                          <input type="name" name="trainerfirstname" class="form-control">
                         </div>
                          <div class="form-group">
                           <label for="trainerlastname">Last Name</label>
-                          <input type="name" class="form-control" id="trainerlastname">
+                          <input type="name" name="trainerlastname" class="form-control">                                                           
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail2">Email Address</label>
-                          <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                          <input type="email" name="email" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword2">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword2">
+                          <input type="password" name="password" class="form-control">
                         </div>
+                    
                         <div class="form-group">
-                            <label for="trainerid">Trainer ID</label>
-                            <input type="number" class="form-control" id="trainerid">
-                        </div>
-                        <div class="form-group">
-                            <label for="trainerphone">Phone Number </label>
-                            <input type="number" class="form-control" id="trainerphone" >
+                            <label for="trainersalary">salary </label>
+                            <input type="number" name="trainersalary" class="form-control" >
                          </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                         <div class="form-group">
+                            <label for="hireddate">Hired date </label>
+                            <input name="hireddate" class="form-control" >
+                         </div>
+                         <div class="form-group">
+                            <label for="trainershifts">shifts </label>
+                            <input name="trainershifts" class="form-control" >
+                         </div>
+                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                       </form>
                 </div>
                         
