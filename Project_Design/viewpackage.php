@@ -76,8 +76,42 @@ $PId=$Ad ->ViewPackage($_POST['packageId']);
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">submit</button>
                       </form>
+                </div>     
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold text-white">Package</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$PId as  $package) {?>
+                           <div class="class-content center">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
+                                    
+                   <div><?php echo "Package Id → " . ($package['Package_id']); ?></div>
+                   <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Package Duration → ".($package['Package_duration']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Begining Date → ".($package['Beginning_date']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "End Date → ".($package['End_date']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Package Fee → ".($package['Package_fee']); ?></div> 
+                    <div style="height:1px; background-color:grey"></div> 
+                    <div><?php echo "Admin Id → ".($package['Admin_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Session Details → ".($package['sessionsDetails']); ?></div>  
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
                 </div>
-                        
             </div>
        </div>
        <script>
@@ -122,35 +156,7 @@ $PId=$Ad ->ViewPackage($_POST['packageId']);
          
          <html>
   
-  <div class="container">
-                <div class="row">
-                    <div class="totaldivs">
-                       <div>
-                        <br>
-                        <br>
-                        <h1 class="font-weight-bold">Package</h1>
-                       </div>
-                        <div>
-                          <?php foreach ((array)$PId as  $package) {?>
-                           <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
-                                    
-                   <div><?php echo "Package Id → " . ($package['Package_id']); ?></div>
-                    <div><?php echo "Package Duration → ".($package['Package_duration']); ?></div>
-                    <div><?php echo "Begining Date → ".($package['Beginning_date']); ?></div>
-                    <div><?php echo "End Date → ".($package['End_date']); ?></div>
-                    <div><?php echo "Package Fee → ".($package['Package_fee']); ?></div>  
-                    <div><?php echo "Admin Id → ".($package['Admin_id']); ?></div>
-                    <div><?php echo "Session Details → ".($package['sessionsDetails']); ?></div>  
-                                </div>
-                                </div>
-                            <?php } ?>
-                           </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>
+
 
 <?php }?>          
 

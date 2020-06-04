@@ -77,8 +77,45 @@ $tId=$Ad ->Search($_POST['trainerId']);
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">Search</button>
                       </form>
+                </div>    
+            </div>
+             
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold text-white">Trainer</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$tId as  $data) {?>
+                           <div class="class-content center">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
+                                    
+                    <div><?php echo "Trainer Id → " . ($data['Trainer_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Trainer First NAME → ".($data['Trainer_Fname']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "rainer Last NAME  → ".($data['Trainer_Lname']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Trainer Email → ".($data['Trainer_email']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo " Trainer Password → ".($data['Trainer_password']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Trainer Salary → ".($data['Trainer_salary']); ?></div>  
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Hired Date → ".($data['Hired_Date']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Shift → ".($data['Shifts']); ?></div>                 
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
                 </div>
-                        
             </div>
        </div>
        <script>
@@ -122,37 +159,7 @@ $tId=$Ad ->Search($_POST['trainerId']);
   ?>
          
          <html>
-  
-  <div class="container">
-                <div class="row">
-                    <div class="totaldivs">
-                       <div>
-                        <br>
-                        <br>
-                        <h1 class="font-weight-bold">Trainer</h1>
-                       </div>
-                        <div>
-                          <?php foreach ((array)$tId as  $data) {?>
-                           <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
-                                    
-                    <div><?php echo "Trainer Id → " . ($data['Trainer_id']); ?></div>
-                    <div><?php echo "Trainer First NAME → ".($data['Trainer_Fname']); ?></div>
-                    <div><?php echo "rainer Last NAME  → ".($data['Trainer_Lname']); ?></div>
-                    <div><?php echo "Trainer Email → ".($data['Trainer_email']); ?></div>
-                    <div><?php echo " Trainer Password → ".($data['Trainer_password']); ?></div>
-                    <div><?php echo "Trainer Salary → ".($data['Trainer_salary']); ?></div>  
-                    <div><?php echo "Hired Date → ".($data['Hired_Date']); ?></div>
-                    <div><?php echo "Shift → ".($data['Shifts']); ?></div>                 
-                                </div>
-                                </div>
-                            <?php } ?>
-                           </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>
+ 
 
 <?php }?>          
 

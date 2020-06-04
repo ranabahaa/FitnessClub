@@ -71,19 +71,25 @@ $packages= $ad->ListPackages();
                        <div>
                         <br>
                         <br>
-                        <h1 class="font-weight-bold">Our Packages</h1>
+                        <h1 class="font-weight-bold text-white">Our Packages</h1>
                        </div>
                         <div>
                           <?php foreach ((array)$packages as  $package) {?>
                            <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
                                     
                     <div><?php echo "Package Id → " . ($package['Package_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Package Duration → ".($package['Package_duration']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Begining Date → ".($package['Beginning_date']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "End Date → ".($package['End_date']); ?></div>
-                    <div><?php echo "Package Fee → ".($package['Package_fee']); ?></div>  
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Package Fee → ".($package['Package_fee']); ?></div> 
+                    <div style="height:1px; background-color:grey"></div> 
                     <div><?php echo "Admin Id → ".($package['Admin_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Session Details → ".($package['sessionsDetails']); ?></div>
                                   
                                 </div>

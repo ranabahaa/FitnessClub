@@ -71,22 +71,31 @@ $sessions= $Ad->ListSessions();
                        <div>
                         <br>
                         <br>
-                        <h1 class="font-weight-bold">Our Sessions</h1>
+                        <h1 class="font-weight-bold text-white">Our Sessions</h1>
                        </div>
                         <div>
                           <?php foreach ((array)$sessions as  $session) {?>
                            <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
                                     
                     <div><?php echo "Session Id → " . ($session['Session_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Session Name → ".($session['Session_name']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Session Cost → ".($session['Session_cost']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Discount → ".($session['discount']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Start Time → ".($session['Start_time']); ?></div>  
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "End Time → ".($session['End_time']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Session Days → ".($session['Session_days']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Session Goals → ".($session['Session_goal']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                     <div><?php echo "Trainer Name → ".($session['Trainer_name']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
                      <div> <?php $Ad-> display($session['Session_id']); ?></div>  
                     
                     

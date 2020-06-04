@@ -81,8 +81,40 @@ $atts=$Ad ->ViewMemberAttendance($_POST['sessionId']);
                         <button type="submit" name="submit" class="btn btn-primary">View</button>
                       </a>
                       </form>
+                </div>   
+            </div>
+              
+  <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold text-white">Member Attendance</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$atts as  $att) {?>
+                           <div class="class-content center">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
+                                    
+                    <div><?php echo "Trainer Id → " . ($att['Trainer_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Package Id → ".($att['Member_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Session Id → ".($att['Session_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo " Date → ".($att['Date']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Count → ".($att['Count']); ?></div>  
+                                  
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
                 </div>
-                        
             </div>
        </div>
 
@@ -128,35 +160,7 @@ $atts=$Ad ->ViewMemberAttendance($_POST['sessionId']);
   ?>
        
          <html>
-  
-  <div class="container">
-                <div class="row">
-                    <div class="totaldivs">
-                       <div>
-                        <br>
-                        <br>
-                        <h1 class="font-weight-bold">Member Attendance</h1>
-                       </div>
-                        <div>
-                          <?php foreach ((array)$atts as  $att) {?>
-                           <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
-                                    
-                    <div><?php echo "Trainer Id → " . ($att['Trainer_id']); ?></div>
-                    <div><?php echo "Package Id → ".($att['Member_id']); ?></div>
-                    <div><?php echo "Session Id → ".($att['Session_id']); ?></div>
-                    <div><?php echo " Date → ".($att['Date']); ?></div>
-                    <div><?php echo "Count → ".($att['Count']); ?></div>  
-                                  
-                                </div>
-                                </div>
-                            <?php } ?>
-                           </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>
+
 
 <?php }?>          
 

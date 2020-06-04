@@ -76,9 +76,43 @@ $MId=$Ad ->ViewMember($_POST['memberId']);
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">View</button>
                       </form>
-                </div>
-                        
+                </div>     
             </div>
+            <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold text-white">Member</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$MId as  $member) {?>
+                           <div class="class-content center">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
+                                    
+                    <div><?php echo "Member Id → " . ($member['Member_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Member First Name → ".($member['Member_Fname']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Member Last Name → ".($member['Member_Lname']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Member Email → ".($member['Member_email']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Member Password → ".($member['Member_password']); ?></div>  
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Phone Number → ".($member['MobileNumber']); ?></div>
+                    
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
        </div>
        <script>
            /* When the user clicks on the button, 
@@ -122,36 +156,7 @@ $MId=$Ad ->ViewMember($_POST['memberId']);
          
          <html>
   
-  <div class="container">
-                <div class="row">
-                    <div class="totaldivs">
-                       <div>
-                        <br>
-                        <br>
-                        <h1 class="font-weight-bold">Member</h1>
-                       </div>
-                        <div>
-                          <?php foreach ((array)$MId as  $member) {?>
-                           <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
-                                    
-                    <div><?php echo "Member Id → " . ($member['Member_id']); ?></div>
-                    <div><?php echo "Member First Name → ".($member['Member_Fname']); ?></div>
-                    <div><?php echo "Member Last Name → ".($member['Member_Lname']); ?></div>
-                    <div><?php echo "Member Email → ".($member['Member_email']); ?></div>
-                    <div><?php echo "Member Password → ".($member['Member_password']); ?></div>  
-                    <div><?php echo "Phone Number → ".($member['MobileNumber']); ?></div>
-                    
-                                </div>
-                                </div>
-                            <?php } ?>
-                           </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>
-
+ 
 <?php }?>          
 
          </html>         

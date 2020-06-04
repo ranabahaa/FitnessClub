@@ -77,9 +77,50 @@ $SId=$Ad ->ViewSession($_POST['sessionId']);
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">submit</button>
                     </form>
-                </div>
-                        
+                </div>    
             </div>
+            <div class="container">
+                <div class="row">
+                    <div class="totaldivs">
+                       <div>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-bold text-white">Session</h1>
+                       </div>
+                        <div>
+                          <?php foreach ((array)$SId as  $session) {?>
+                           <div class="class-content center">
+                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
+                                    
+                    <div><?php echo "Session Id → " . ($session['Session_id']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Session Name → ".($session['Session_name']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Session Cost → ".($session['Session_cost']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Discount → ".($session['discount']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Start Time → ".($session['Start_time']); ?></div> 
+                    <div style="height:1px; background-color:grey"></div> 
+                    <div><?php echo "End Time → ".($session['End_time']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Session Days → ".($session['Session_days']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Session Goals → ".($session['Session_goal']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div><?php echo "Trainer Name → ".($session['Trainer_name']); ?></div>
+                    <div style="height:1px; background-color:grey"></div>
+                    <div> <?php $Ad-> display($session['Session_id']); ?></div>           
+                                </div>
+                                </div>
+                            <?php } ?>
+                           </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+
        </div>
        <script>
            /* When the user clicks on the button, 
@@ -123,39 +164,7 @@ $SId=$Ad ->ViewSession($_POST['sessionId']);
          
          <html>
   
-  <div class="container">
-                <div class="row">
-                    <div class="totaldivs">
-                       <div>
-                        <br>
-                        <br>
-                        <h1 class="font-weight-bold">Session</h1>
-                       </div>
-                        <div>
-                          <?php foreach ((array)$SId as  $session) {?>
-                           <div class="class-content center">
-                                <div class="one temp" style="background-color: #FAF3DC;">
-                                    
-                    <div><?php echo "Session Id → " . ($session['Session_id']); ?></div>
-                    <div><?php echo "Session Name → ".($session['Session_name']); ?></div>
-                    <div><?php echo "Session Cost → ".($session['Session_cost']); ?></div>
-                    <div><?php echo "Discount → ".($session['discount']); ?></div>
-                    <div><?php echo "Start Time → ".($session['Start_time']); ?></div>  
-                    <div><?php echo "End Time → ".($session['End_time']); ?></div>
-                    <div><?php echo "Session Days → ".($session['Session_days']); ?></div>
-                    <div><?php echo "Session Goals → ".($session['Session_goal']); ?></div>
-                    <div><?php echo "Trainer Name → ".($session['Trainer_name']); ?></div>
-                    <div> <?php $Ad-> display($session['Session_id']); ?></div>           
-                                </div>
-                                </div>
-                            <?php } ?>
-                           </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>
-
+ 
 <?php }?>          
 
          </html>         
