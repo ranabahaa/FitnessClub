@@ -3,6 +3,7 @@
 
 if(isset($_POST['SendReview']))
     {   
+        session_start();
         $m_object= new Member();
         session_start();
         $tname = $_POST['TrainerName'];   
@@ -15,7 +16,7 @@ if(isset($_POST['SendReview']))
     <head>
         <title>FitnessHouse.com</title>
         <link href="css/bootstrap.min.css " rel="stylesheet">
-        <link href="fileMember.css" rel="stylesheet"> 
+        <link href="file.css" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">

@@ -26,8 +26,8 @@ class Member implements observer{
 
     $this ->member_id=$mid;
    }*/
-   public function Member($id)
-   {
+ public function Member($id)
+  {
     $this->member_id=$id;
    // echo "the member id is $this->member_id<br>";
 

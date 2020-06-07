@@ -1,14 +1,14 @@
    <?php  
    include'..//DataLayer/Database.php';
     session_start();
-    $mail=$_SESSION['mail'];
+   // $mail=$_SESSION['mail'];
     class person{
         
-        function __construct(){
+       /* function __construct(){
             $connectdb  = connectdb::getInstance();
             $conn = $connectdb->getConnection();
 
-        }
+        }*/
 
         function login($mail,$pass){
             $connectdb  = connectdb::getInstance();
