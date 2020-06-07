@@ -8,9 +8,9 @@ interface Observer
 
 interface Subject
 {
-	public function addObserver(Observer $newObserver);
-	public function deleteObserver(Observer $removedObserver);
-	public function notify();
+	public  function addObserver(Observer $newObserver);
+	public  function deleteObserver(Observer $removedObserver);
+	public  function notify($sessionName);
 
 }  
 

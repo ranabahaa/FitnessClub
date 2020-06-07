@@ -1,12 +1,24 @@
-<?php 
-include ('../ApplicationLayer/AdminClass.php');
- if (isset($_POST['submit']))
-    {
-$Ad = new Admin(1);
-$MId=$Ad ->ViewMember($_POST['memberId']);
 
-}
- ?>
+<?php
+include'..//ApplicationLayer/Memberclass.php';
+  session_start();
+$PackageId =$_SESSION['packageId'];
+//$TrainerName=$_SESSION['name']
+$member=new Member();
+
+if(isset($_POST['Book'])){
+  
+   //Retrive the id of trainer for that name
+
+  $name = $_POST['TrainerName'];
+  $member->selectTrainer2($name);
+  header('Location: index1.php');
+ 
+
+   }
+ 
+
+?>
 <html>
     <head>
         <title>FitnessHouse.com</title>
@@ -27,7 +39,7 @@ $MId=$Ad ->ViewMember($_POST['memberId']);
 
     </head>
     <body>
-       <div class="home" style="height:100vh">
+       <div class="home" style="height: 100vh">
             <div class="nav">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav">
                     <a href="#"><img src="images/logo3.jpg" class="navimg"></a>
@@ -41,7 +53,7 @@ $MId=$Ad ->ViewMember($_POST['memberId']);
                                     <a class="nav-link" href="<?php echo 'index1.php'; ?>">HOME <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                     <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
+                                    <a class="nav-link text-white" href="<?php echo 'index1.php #aboutus'; ?>">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">                        
                                     <div class="dropdown">
@@ -68,52 +80,40 @@ $MId=$Ad ->ViewMember($_POST['memberId']);
                 </nav>
            </div>
            <div class="overlay">
-                <div class="container text-white ">
-                    <form class="addform" method="POST">
-                        <div class="form-group ">
-                        <div class="form-group">
-                            <label for="memberid">Member ID</label>
-                            <input type="number" name="memberId" class="form-control" id="memberid">
-                        </div>
-                        <button type="submit" name="submit" class="btn btn-primary">View</button>
-                      </form>
-                </div>     
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="totaldivs">
-                       <div>
-                        <br>
-                        <br>
-                        <h1 class="font-weight-bold text-white">Member</h1>
-                       </div>
-                        <div>
-                          <?php foreach ((array)$MId as  $member) {?>
-                           <div class="class-content center">
-                                <div class="one temp text-white" style="background-color: #060520e6; border:4px solid black;">
-                                    
-                    <div><?php echo "Member Id → " . ($member['Member_id']); ?></div>
-                    <div style="height:1px; background-color:grey"></div>
-                    <div><?php echo "Member First Name → ".($member['Member_Fname']); ?></div>
-                    <div style="height:1px; background-color:grey"></div>
-                    <div><?php echo "Member Last Name → ".($member['Member_Lname']); ?></div>
-                    <div style="height:1px; background-color:grey"></div>
-                    <div><?php echo "Member Email → ".($member['Member_email']); ?></div>
-                    <div style="height:1px; background-color:grey"></div>
-                    <div><?php echo "Member Password → ".($member['Member_password']); ?></div>  
-                    <div style="height:1px; background-color:grey"></div>
-                    <div><?php echo "Phone Number → ".($member['MobileNumber']); ?></div>
-                    
-                                </div>
-                                </div>
-                            <?php } ?>
-                           </div>
-                       
-                       
-                    </div>
-                </div>
-            </div>
+                <div class="container text-white">
+                    <form class="addform"method="POST">
+                         <br><br>
+                         <?php 
+                         $trainerIds= $member->selectPackage();
 
+                        foreach ($trainerIds as $trainerid){
+                           $id=$trainerid['TrainerID'];
+                           $connectdb  = connectdb::getInstance();
+                           $conn = $connectdb->getConnection();
+                          $q="SELECT Trainer_name FROM trainer WHERE Trainer_id='$id'";
+                          $res = mysqli_query($conn,$q);
+                          //$array = mysqli_fetch_all($res,MYSQLI_ASSOC);
+                          $array=mysqli_fetch_assoc($res);
+                          $tname=$array['Trainer_name'];
+
+                          echo $tname;//asm2 gowa eldatabase
+                          echo " <br>";
+                           //print_r($array);
+                           }//array containing TrainerNames
+                            ?>
+                         <br><br> 
+                         <br><br>
+                        <div class="form-group">
+                            <label for="trainerid">Trainer Name</label>
+                            <input type="text" name="TrainerName"class="form-control">
+                        </div>
+                        
+                       
+                        <button type="submit"name="Book" class="btn btn-primary">Book</button>
+                      </form>
+                </div>
+                        
+            </div>
        </div>
        <script>
            /* When the user clicks on the button, 
@@ -145,19 +145,3 @@ $MId=$Ad ->ViewMember($_POST['memberId']);
     </body>
 
 </html>
-<?php 
-                                    
- if (isset($_POST['submit']))
-    {
- 
-  session_start();
-  $_SESSION['id'] = $_POST['memberId'];
-
-  ?>
-         
-         <html>
-  
- 
-<?php }?>          
-
-         </html>         

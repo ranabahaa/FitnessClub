@@ -50,7 +50,7 @@ echo mysqli_error($conn);
 	   $query = "SELECT * FROM $tablename where $id= $value";
 
 	   $result = mysqli_query($conn,$query);
-
+//echo $query;
 	   $array = mysqli_fetch_all( $result , MYSQLI_ASSOC);
 	//echo 	$conn->rowcount() ."<br>";
 
@@ -87,7 +87,7 @@ static function insert($tablename,$value){
   $conn = $connectdb->getConnection();
 
   $sql= "INSERT INTO $tablename VALUES ($value)";
-//  echo "sql command : $sql <br>";
+  echo "sql command : $sql <br>";
    $q=mysqli_query($conn,$sql);
   if($q){
 

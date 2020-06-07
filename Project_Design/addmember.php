@@ -1,12 +1,14 @@
 <?php 
 include ('../ApplicationLayer/AdminClass.php');
-
+require_once('../ApplicationLayer/Memberclass.php');
     if(isset($_POST['Submit']))
     {
         $admin = new Admin(1);
          
-        $admin->addMember($_POST['memberfname'],$_POST['memberlname'],$_POST['memberemail'],$_POST['memberpassword'],$_POST['memberid'],$_POST['memberphone']);
-      
+     //   $admin->addMember($_POST['memberfname'],$_POST['memberlname'],$_POST['memberemail'],$_POST['memberpassword'],$_POST['memberid'],$_POST['memberphone']);
+        $member = new member($_POST['memberid']);
+        echo $member->member_id;
+        $admin->addObserver($member); 
     }
 ?>
 <html>

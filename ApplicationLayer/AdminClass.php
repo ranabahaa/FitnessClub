@@ -7,7 +7,7 @@ include ('Observer.php');
 //require('FpdfLibrary/fpdf.php');
 include('PDF.php');
 
-class Member implements Observer 
+/*class Member implements Observer 
 {
 	public $id ;
 	public function __construct($id)
@@ -16,43 +16,61 @@ class Member implements Observer
 	}
 	public function update()
 	{
-		echo "i am observer $this->id"."<br>";
+		$messege = "i have been Notified from Admin ";
 	}
-
-
-
-
 }
+
+*/
+
+
+
 class Admin implements Subject
 {
-	 protected $observers = [];
+	public   $observers = [];
 	public $id;
+	public $notificationId = 1;
 	public function __construct($id)
 	{
 		$this->id = $id;
+
 	}
-	public function addObserver( Observer $newObserver)
+	public  function addObserver( Observer $newObserver)
 	{
-		array_push($this->observers, $newObserver);
-		echo "admin added Observer $newObserver->id"."<br>";
+		//array_push(Admin::$observers, $newObserver->member_id);
+		$observer = array('Member_Id' => $newObserver->member_id,'Admin_Id'=>$this->id);
+		//echo "admin added Observer $newObserver->id"."<br>";
+		print_r($observer);
+
+		Database::insert("Observers",implode( ',',$observer));
 	}
 
-	public function deleteObserver( Observer $removedObserver)
+	public  function deleteObserver( Observer $removedObserver)
 	{
-		    $key = array_search($removedObserver, $this->observers);
+		    $key = array_search($removedObserver,Admin::$observers);
 
-		    unset($this->observers[$key]);
+		    unset(Admin::$observers[$key]);
 		   echo "admin deleted Observer $removedObserver->id"."<br>";
 
 
 	}
-	public function notify()
+	public  function notify($sessionName)
 	{
-		foreach ($this->observers as $observer) 
+
+		$observers=DataBase::selectAll("Observers");
+		foreach ($observers as $observer) 
 		{
 			# code...	
 			# code...
-			$observer->update();
+			$observer = new member($observer['MemberId']);
+
+			$array = array('Notification_Id'=>'NULL','Admin_Id'=> $this->id,'Member_Id' => $observer->member_id,'Notification'=>" ' Check our New Session $sessionName '");
+			echo "Observers id ";
+			echo $observer->member_id;
+					$array = implode(",", $array);
+
+
+			Database::insert("notification",$array);
+		//	$this->notificationId++;
 		}
 
 	}
