@@ -1,5 +1,5 @@
 <?php
-    include'..//DataLayer/Database.php';
+    require_once('..//DataLayer/Database.php');
     session_start();
     //here is the global variable for the session
     //$id=$_SESSION['id'];
@@ -79,7 +79,7 @@
             session_destroy();
             unset($_SESSION['mail']);
 
-            header('location:index1.php');     
+            header('location: index1.php');     
           
         }
         function updateProfile($oldpass,$newpass,$confirmpass){

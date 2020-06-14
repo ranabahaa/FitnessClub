@@ -7,7 +7,7 @@ class connectdb {
 	private $_host = 'localhost';
 	private $_username = 'ahmedBahaa';
 	private $_password = 'test1234';
-	private $_database = 'fcmMember';
+	private $_database = 'test1';
 
 
 	public static function getInstance() {

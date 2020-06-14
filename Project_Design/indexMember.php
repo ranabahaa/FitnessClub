@@ -1,6 +1,6 @@
 <?php
    include('..//ApplicationLayer/Memberclass.php');
-
+include ('..//ApplicationLayer/PersonClass.php');
 if(isset($_POST['SendReview']))
     {   
         session_start();

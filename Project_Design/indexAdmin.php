@@ -66,8 +66,9 @@
                                         
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">LOGOUT <i class="fas fa-long-arrow-alt-right text-white"></i></a>
-
+                                <form method="POST">
+                                    <a class="nav-link " ><button class="bg-dark text-white" name="logoutbtn">LOGOUT</button> <i class="fas fa-long-arrow-alt-right text-white"></i></a>
+                                </form>    
                                 </li>
                             </ul>
                         </div>

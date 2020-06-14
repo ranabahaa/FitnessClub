@@ -2,7 +2,7 @@
 require('FpdfLibrary/fpdf.php');
 
 
-include('../DataLayer/Database.php');
+require_once('../DataLayer/Database.php');
 
 class pdf extends FPDF
 {

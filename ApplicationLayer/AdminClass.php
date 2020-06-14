@@ -1,6 +1,7 @@
 <?php 
 
 include ('Observer.php');
+include ('PersonClass.php');
 
 
 //include ('../DataLayer/Database.php');
@@ -44,15 +45,7 @@ class Admin implements Subject
 		Database::insert("Observers",implode( ',',$observer));
 	}
 
-	public  function deleteObserver( Observer $removedObserver)
-	{
-		    $key = array_search($removedObserver,Admin::$observers);
 
-		    unset(Admin::$observers[$key]);
-		   echo "admin deleted Observer $removedObserver->id"."<br>";
-
-
-	}
 	public  function notify($sessionName)
 	{
 
@@ -64,14 +57,23 @@ class Admin implements Subject
 			$observer = new member($observer['MemberId']);
 
 			$array = array('Notification_Id'=>'NULL','Admin_Id'=> $this->id,'Member_Id' => $observer->member_id,'Notification'=>" ' Check our New Session $sessionName '");
-			echo "Observers id ";
-			echo $observer->member_id;
+		//	echo "Observers id ";
+		//	echo $observer->member_id;
 					$array = implode(",", $array);
 
 
 			Database::insert("notification",$array);
 		//	$this->notificationId++;
 		}
+
+	}
+		public  function deleteObserver( Observer $removedObserver)
+	{
+		    $key = array_search($removedObserver,Admin::$observers);
+
+		    unset(Admin::$observers[$key]);
+		 //  echo "admin deleted Observer $removedObserver->id"."<br>";
+
 
 	}
 

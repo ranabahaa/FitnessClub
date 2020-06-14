@@ -1,16 +1,18 @@
 <?php 
 include ('../ApplicationLayer/AdminClass.php');
 include ('../ApplicationLayer/Memberclass.php');
-        $admin = new Admin(1);
-       $admin->notify("zuma Class");
-/*   if(isset($_POST["submit"]))    {
+
+   if(isset($_POST["submit"]))    {
+            $admin = new Admin(1);
+
         $admin-> AddSession( $_POST['sessionid'], $_POST['sessionname'],$_POST['sessioncost'],$_POST['sessiondiscount'],$_POST['stime'],$_POST['etime'], $_POST['sessionDays'],$_POST['sessiongoal'],$_POST['trainername']);
         //   $get_parameters="action=view & file = indexAdmin.pdf";
     //   echo "<a href='indexAdmin.php?$get_parameters' target='_blank'></a>";
         $admin->upload_image($_POST['sessionid']);
 
         //echo "Report button done <br>";
-    }*/
+       $admin->notify($_POST['sessionname']);
+    }
 ?>
 
 <html>

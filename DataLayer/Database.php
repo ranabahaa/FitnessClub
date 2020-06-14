@@ -141,7 +141,7 @@ function Display($SessionId){
     $connect=$connect->getConnection();
                  $query = " SELECT image FROM sessions where Session_id = $SessionId " ;
                 $result = mysqli_query($connect,$query);  
-                print_r($result);
+               // print_r($result);
                 while($row = mysqli_fetch_array($result))  
                 {  
                      echo '  
