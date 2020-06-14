@@ -1,6 +1,6 @@
 <?php 
 
-include ('..//ApplicationLayer/Observer.php');
+//include ('..//ApplicationLayer/Observer.php');
 include('..//ApplicationLayer/CashStrategyClass.php');
 include('..//ApplicationLayer/PayPalStrategyClass.php');
 include('..//ApplicationLayer/CreditCardStrategyClass.php');

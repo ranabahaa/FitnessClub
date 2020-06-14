@@ -1,5 +1,5 @@
 <?php
-   include('..//ApplicationLayer/MemberClass.php');
+   include('..//ApplicationLayer/Memberclass.php');
 if(isset($_POST['SendReview']))
     {   
         $m_object= new Member();

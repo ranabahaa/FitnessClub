@@ -5,9 +5,9 @@ class connectdb {
 	private $_connection;
 	private static $_instance; //The single instance
 	private $_host = 'localhost';
-	private $_username = "root";
-	private $_password = "";
-	private $_database = 'fcmsfinal';
+	private $_username = 'ahmedBahaa';
+	private $_password = 'test1234';
+	private $_database = 'test1';
 
 
 	public static function getInstance() {
